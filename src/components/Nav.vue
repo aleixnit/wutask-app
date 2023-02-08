@@ -1,24 +1,26 @@
 <template>
-  <nav>
+  <nav class="menu">
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-    <router-link to="/">
-      Home
-    </router-link>
+    <img class="navbar-img"  src="/assets/Logo1.png" alt="">
+    <router-link to="/"> Home </router-link>
 
-    <ul>
+    <!-- Esto es el menú central del navegador -->
+    <div class="menu-central">
+      <ul>
         <li>
-          <router-link to="/">Task Manager</router-link>
+          <router-link to="/">Tus tareas</router-link>
         </li>
 
         <li>
-          <router-link to="/account">Your Account</router-link>
+          <router-link to="/account">Perfil</router-link>
         </li>
-    </ul>
+      </ul>
+    </div>
 
     <div>
       <ul>
         <li class="log-out-welcome">
-          <p>Welcome back {{user.email}} </p>
+          <p>Welcome back, {{ user.email }}</p>
         </li>
         <li>
           <button @click="signOut" class="button">Cerrar sesión</button>
@@ -33,10 +35,10 @@
 import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import { ref } from 'vue';
+import { ref } from "vue";
 import { supabase } from "../supabase";
 
-const user = supabase.auth.user()
+const user = supabase.auth.user();
 //constant to save a variable that will hold the use router method
 const route = "/";
 const buttonText = "Todo app";
@@ -52,20 +54,32 @@ const userEmail = getUser.email;
 const redirect = useRouter();
 
 const signOut = async () => {
-  try{
+  try {
     // call the user store and send the users info to backend to signOut
     // then redirect user to the homeView BARRA DE ABAJO ES LA BUENA INICIAL
     // await useUserStore().signOut();
-    await supabase.auth.signOut()
+    await supabase.auth.signOut();
     redirect.push({ path: "/auth/login" });
   } catch (error) {}
 };
-
 </script>
 
 <style>
+
+.menu {
+  height: 15vh;
+  border: solid 1px red;
+}
+
 .navbar-img {
-  width: 90px;
+  width: 5vw;
+}
+
+.menu-central ul {
+  display: flex;
+  flex-direction: row;
+  gap: 15vw;
+  border: solid 1px red;
 }
 
 nav {

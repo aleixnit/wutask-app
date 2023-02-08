@@ -105,7 +105,8 @@ const signIn = async () => {
 
 <style scoped>
 .fondo {
-  background-color: rgb(122, 233, 255);
+  background-image: url("../../assets/fondo-banner-computacion-nube-ciudad-inteligente.jpg");
+  background-size: cover;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -114,11 +115,12 @@ const signIn = async () => {
 
 .container {
   background: rgba(255, 255, 255, 0.5);
+  border-radius: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 95vh;
 }
 
 .container h3 {

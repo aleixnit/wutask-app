@@ -1,13 +1,12 @@
 <template>
   <div class="wrapper">
     <Nav />
-
     <div class="content"> 
-      <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link>
+      <!-- <h3>Your account:</h3>
+      <router-link to="/account">Account</router-link> -->
     </div>
     <NewTask />
-    <h1>Tasks:</h1>
+    <h1>Tareas:</h1>
     <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
   </div>
 </template>
@@ -34,7 +33,15 @@ getTasks();
 
 </script>
 
-<style></style>
+<style>
+.wrapper h1 {
+display: flex;
+justify-content: center;
+flex-direction: row;
+}
+
+
+</style>
 
 <!-- 
 **Hints**
