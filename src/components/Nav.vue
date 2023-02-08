@@ -18,10 +18,10 @@
     <div>
       <ul>
         <li class="log-out-welcome">
-          <p>Welcome, user</p>
+          <p>Welcome back {{user.email}} </p>
         </li>
         <li>
-          <button @click="signOut" class="button">Log out</button>
+          <button @click="signOut" class="button">Cerrar sesión</button>
         </li>
       </ul>
     </div>
@@ -34,7 +34,9 @@ import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { ref } from 'vue';
+import { supabase } from "../supabase";
 
+const user = supabase.auth.user()
 //constant to save a variable that will hold the use router method
 const route = "/";
 const buttonText = "Todo app";
@@ -52,7 +54,10 @@ const redirect = useRouter();
 const signOut = async () => {
   try{
     // call the user store and send the users info to backend to signOut
-    // then redirect user to the homeView
+    // then redirect user to the homeView BARRA DE ABAJO ES LA BUENA INICIAL
+    // await useUserStore().signOut();
+    await supabase.auth.signOut()
+    redirect.push({ path: "/auth/login" });
   } catch (error) {}
 };
 
