@@ -8,7 +8,7 @@
     <div class="menu-central">
       <ul>
         <li>
-          <router-link to="/">Tus tareas</router-link>
+          <router-link to="/">Reloj</router-link>
         </li>
 
         <li>

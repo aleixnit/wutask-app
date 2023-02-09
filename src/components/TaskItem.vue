@@ -1,12 +1,23 @@
 <template>
-  <div class="container">
     <div class="container2">
       <h3>{{ task.title }}</h3>
       <p>{{ task.description }}</p>
+
+      <!-- boton de borrar tareas -->
       <button @click="deleteTask">Borrar {{ task.title }}</button>
+
+      <!-- funcion para editar las tareas -->
       <button @click="toggleDialog">Editar</button>
+      <div v-if="modifyTaskBool">
+        <label>Title:</label><input type="text" v-model="title" />
+        <br />
+        <label>Description:</label><input type="text" v-model="description" />
+        <br />
+        <button @click="modifyContent">Editar</button>
+      </div>
+
+
     </div>
-  </div>
 </template>
 
 <script setup>
@@ -25,26 +36,21 @@ const deleteTask = async () => {
   await taskStore.deleteTask(props.task.id);
 };
 
+//funcion para editar las tareas
 const toggleDialog = () => {
   editDialog.value = !editDialog.value;
   newTitle.value = props.task.eventTitle;
   newDescription.value = props.task.eventInfo;
 };
-
 </script>
 
 <style>
-.container {
-  border: solid 1px red;
+.container2 {
+  width: 20vw;
   display: flex;
   flex-direction: row;
-}
-
-.container2 {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   border: solid 1px red;
 }
 </style>
@@ -81,4 +87,20 @@ to an empty string to clear it from the ui.
 
 8. Function to emmit a custom event emit() that takes 2 parameters a name for the custom event and the value that will be
 send via the prop to the parent component. This function can control the removal of  the task on the homeview.
+
+**********************************************************************
+Se pueden usar "ref()" o "reactive()" para almacenar los siguientes elementos, dependiendo si se quieren almacenar individualmente o como un objeto.
+
+Las propiedades de datos necesarias son las siguientes: una variable booleana para almacenar una variable "Importante" en falso, una cadena de texto para almacenar un error, una cadena de texto para almacenar el valor de la tarea que el usuario puede editar, y una variable booleana inicial para ocultar el campo de entrada utilizado para editar el título y descripción de la tarea.
+
+Almacenar los eventos personalizados que se usarán para llamar a las funciones de la vista principal para editar, eliminar y alternar el estado de la tarea.
+
+Función para manejar el error con las propiedades de datos mencionadas anteriormente para controlar el error y la variable booleana que controla la variable booleana vacía.
+
+Función para manejar el diálogo de edición donde se muestra el campo de entrada y la cadena de texto utilizada para almacenar el valor del campo de entrada se usará aquí para guardar el valor como prop en esta función.
+
+Función para emitir un evento personalizado que tome 2 parámetros: un nombre para el evento personalizado y el valor que se enviará a través de la prop al componente padre. Esta función puede controlar la alternación de la finalización de la tarea en la vista principal.
+
+Función para editar la información de la tarea que se decidió que el usuario puede editar. El cuerpo de la función toma una condicional que primero verifica si el valor de la tarea (ya sea el título y la descripción o solo el título) está vacío, en cuyo caso se ejecuta la función utilizada para manejar el error en la sugerencia 4. De lo contrario, la condicional establece la primera variable booleana mencionada en la sugerencia 2 de nuevo en su valor booleano inicial para ocultar el mensaje de error y hace lo mismo con la propiedad de datos mencionada en la sugerencia 4; una constante que almacena un objeto que contiene el valor antiguo de la prop item y el valor de la tarea que proviene de la propiedad de datos mencionada en la sugerencia 3; un evento personalizado que toma 2 parámetros: un nombre para el evento personalizado y el valor del objeto utilizado en
+***********************************************************************
 -->

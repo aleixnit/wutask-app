@@ -166,6 +166,6 @@ const signIn = async () => {
 }
 
 .registrarse:hover {
-  background-color:  rgb(122, 233, 255);
+  background-color: rgb(68,105,175);
 }
 </style>
