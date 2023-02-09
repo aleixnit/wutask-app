@@ -5,8 +5,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="./resources/images/readMe/wu.png" alt="Logo" width="80" height="80">
-  <h3 align="center">Circle Landing Agency Website</h3>
+  <h3 align="center">Task App</h3>
   <a href="">Visit Website</a>
 </div>
 
