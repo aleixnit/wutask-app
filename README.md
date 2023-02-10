@@ -82,7 +82,7 @@
 - [x] 13.15h / 14:45h: Damos una primera pincelada de CSS al TaskItem component.
 
 #### Day Two
-###### Miercoles 8, Enero 2023
+###### Jueves 8, Enero 2023
 
 - [x] 9.00h AM: Estilo la pagina inicial, el Sign Up
 - [x] 11.00h / 12.15h: Añado que aparezca el e-mail del usuario Logeado despúes de Welcome Back.
@@ -90,6 +90,14 @@
 - [x] 12.15h / 13.15h: Añado el footer
 - [x] 12.15h / 13.15h: Estilo un poco el navbar
 - [x] 13.15h / 14:45h: Añado el botón Marcar como completado.
+
+#### Day Two
+###### Viernes 8, Enero 2023
+
+- [ ] Crear la lógica del botón Mark as complete!
+- [ ] Estilar el New Task,Task item i footer
+- [ ] Empezar con el profile
+- [ ] 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
