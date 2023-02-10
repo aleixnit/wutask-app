@@ -1,23 +1,32 @@
 <template>
-    <div class="container2">
-      <h3>{{ task.title }}</h3>
-      <p>{{ task.description }}</p>
+  <div class="container2">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <!-- <button @click=>Marcar como completada</button> -->
 
-      <!-- boton de borrar tareas -->
-      <button @click="deleteTask">Borrar {{ task.title }}</button>
+    <!-- boton de borrar tareas -->
+    <button @click="deleteTask">Borrar {{ task.title }}</button>
 
-      <!-- funcion para editar las tareas -->
-      <button @click="toggleDialog">Editar</button>
-      <div v-if="modifyTaskBool">
-        <label>Title:</label><input type="text" v-model="title" />
-        <br />
-        <label>Description:</label><input type="text" v-model="description" />
-        <br />
-        <button @click="modifyContent">Editar</button>
+    <!-- boton para editar tareas -->
+    <button @click="inputToggle">Editar {{ task.title }}</button>
+    <div v-if="showInput">
+      <div>
+        <p>Escribe un título</p>
+        <input type="text" v-model="newTitle" placeholder="Insert title..." />
       </div>
-
-
+      <div>
+        <p>Escribe una descripción</p>
+        <input
+          type="text"
+          v-model="newDescription"
+          placeholder="Insert description..."
+        />
+      </div>
+      <button @click="sendData">Enviar datos</button>
     </div>
+
+    
+  </div>
 </template>
 
 <script setup>
@@ -26,21 +35,46 @@ import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
+const emit = defineEmits(["updateTask"]);
 
 const props = defineProps({
   task: Object,
 });
 
+const showInput = ref(false);
+const newTitle = ref("");
+const newDescription = ref("");
+
+
+function inputToggle() {
+  showInput.value = !showInput.value;
+}
+
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async () => {
   await taskStore.deleteTask(props.task.id);
+  emit("updateTask")
 };
 
+const showErrorMess = ref (false)
+const errorMess = ref(null);
+
+
 //funcion para editar las tareas
-const toggleDialog = () => {
-  editDialog.value = !editDialog.value;
-  newTitle.value = props.task.eventTitle;
-  newDescription.value = props.task.eventInfo;
+
+
+const sendData = async () => {
+  if (newTitle.value.length < 4 || newDescription.value.length < 4) {
+    showErrorMess.value = true;
+    errorMess.value = "The task title or description is empty or just too short. (That's what she said)";
+    setTimeout(() => {
+      showErrorMess.value = false;
+    }, 5000);
+    
+  } else {
+    taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
+    emit("updateTask");
+  }
 };
 </script>
 

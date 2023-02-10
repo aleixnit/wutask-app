@@ -77,17 +77,19 @@
 #### Day Two
 ###### Miercoles 8, Enero 2023
 
-- [x] 9.00h AM: Le doy estilo CSS a la Sign In Page / Intentaremos poner un vídeo de fondo en la Sign In.
-- [x] 11.00h / 12.15h: Añado que aparezca el e-mail del usuario Logeado despúes de Welcome Back.
+- [x] 9.00h AM: Sign In, Sign Up y Login ready!
 - [x] 12.15h / 13.15h: Añadimos el botón de editar Tareas
 - [x] 13.15h / 14:45h: Damos una primera pincelada de CSS al TaskItem component.
-- [x] 14.45h: Añado el Footer.
-- [x] 16.00h: Añadimos un fondo
 
 #### Day Two
 ###### Miercoles 8, Enero 2023
 
-ACTUALIZAR ESTA PARTE DEL README DIARIAMENTE.
+- [x] 9.00h AM: Estilo la pagina inicial, el Sign Up
+- [x] 11.00h / 12.15h: Añado que aparezca el e-mail del usuario Logeado despúes de Welcome Back.
+- [x] 12.15h / 13.15h: Añado la lógica al boton de editar Tareas.
+- [x] 12.15h / 13.15h: Añado el footer
+- [x] 12.15h / 13.15h: Estilo un poco el navbar
+- [x] 13.15h / 14:45h: Añado el botón Marcar como completado.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

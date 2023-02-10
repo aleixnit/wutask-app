@@ -5,9 +5,18 @@
     <!-- <h3>Your account:</h3>
       <router-link to="/account">Account</router-link> -->
     <!-- </div> -->
-    <NewTask />
+    <!-- En la linea de update task, podría ir @deleteTask="getTasks" -->
+
+    <NewTask @addTitle="getTasks" />
     <h1>Tareas:</h1>
-    <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
+    <div>
+      <TaskItem
+        v-for="task in tasks"
+        :key="task.id"
+        :task="task"
+        @updateTask="getTasks"
+      />
+    </div>
     <Footer />
   </div>
 </template>
@@ -35,11 +44,6 @@ getTasks();
 </script>
 
 <style>
-.wrapper h1 {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
 </style>
 
 <!-- 
