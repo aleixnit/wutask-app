@@ -24,7 +24,7 @@
           <div class="form-input">
             <label for="password" class="input-field-label" />
             <input
-              type="password"
+              type="text"
               id="password"
               class="input-field"
               placeholder="Introduce tu contraseña"
