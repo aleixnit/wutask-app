@@ -69,7 +69,7 @@ getTasks();
   background-image: url("../../assets/mar-de-soledad_1920x1080_xtrafondos.com.jpg");
   background-size: cover;
   background-attachment: fixed;
-  padding-top: 10vh;
+  padding-top: 74vh;
   padding-bottom: 15vh;
   /* background-image: url("../../assets/mar-de-soledad_1920x1080_xtrafondos.com.jpg");
   background-attachment: fixed;

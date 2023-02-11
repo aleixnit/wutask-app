@@ -90,24 +90,26 @@ const addTask = () => {
 <style>
 .container-task {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5vw;
-  height: 70vh;
-  /* padding-top: 5vh; */
+  gap: 2vw;
+  height: 90vh;
+  width: 100%;
+  padding-top: 5vh;
   padding-bottom: 5vh;
-  padding-right: 10vw;
-  padding-left: 10vw;
   background-image: url("../../assets/el-sol-al-amanecer-entre-las-nubes_5120x2880_xtrafondos.com.jpg");
   background-attachment: fixed;
   background-size: cover;
+  position: absolute;
+  top:0;
 }
 
 .div1 {
   width: 60%;
   /* border: solid 1px red; */
   color: #ffffff;
+  text-align: center;
 }
 
 .div2 {

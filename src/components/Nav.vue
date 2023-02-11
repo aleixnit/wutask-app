@@ -1,7 +1,11 @@
 <template>
   <nav class="menu">
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-    <img class="navbar-img" src="/assets/165307706_10159118078709812_332331654461491189_n.jpg" alt="" />
+    <img
+      class="navbar-img"
+      src="/assets/165307706_10159118078709812_332331654461491189_n.jpg"
+      alt=""
+    />
     <router-link class="links-visitados" to="/"> Home </router-link>
 
     <!-- Esto es el menú central del navegador -->
@@ -17,7 +21,9 @@
     <div class="">
       <ul>
         <li>
-          <router-link class="links-visitados" to="/account">Perfil</router-link>
+          <router-link class="links-visitados" to="/account"
+            >Perfil</router-link
+          >
         </li>
       </ul>
     </div>
@@ -89,17 +95,20 @@ const signOut = async () => {
 } */
 
 nav {
-  background-image:url("../../assets/AdobeStock_234342732.jpeg");
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: transparent;
   display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: center;
   padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-bottom: 20vh;
+  position: relative;
+  z-index: 2;
 }
 
+nav a {
+  text-decoration: none;
+}
 nav ul {
   list-style: none;
   /* padding-inline-start: 0; */
@@ -114,14 +123,13 @@ nav ul {
 }
 
 .links-visitados:visited {
-  color:#fff;
+  color: #fff;
+  text-decoration: none;
 }
 
 .log-out ul {
   display: flex;
   flex-direction: row;
-  gap:3vw;
+  gap: 3vw;
 }
-
-
 </style>
