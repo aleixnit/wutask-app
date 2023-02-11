@@ -1,5 +1,5 @@
 <template>
-  
+  <div class="task-item-fondo">
   <div class="card">
     <div class="card2">
       <h3 :class="props.task.is_complete ? 'case1': 'case2'" >{{ task.title }}</h3>
@@ -37,6 +37,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
@@ -104,6 +105,9 @@ const completedTask = ref(false)
     text-decoration: line-through;
 }
 
+.task-item-fondo {
+  
+}
 </style>
 
 <!--

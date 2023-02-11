@@ -79,8 +79,8 @@ const addTask = () => {
   justify-content: center;
   align-items: center;
   gap: 5vw;
-  height: 80vh;
-  padding-top: 5vh;
+  height: 70vh;
+  /* padding-top: 5vh; */
   padding-bottom: 5vh;
   padding-right: 10vw;
   padding-left: 10vw;

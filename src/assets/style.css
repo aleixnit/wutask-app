@@ -61,20 +61,23 @@
   .card {
     width: 20vw;
     height: 40vh;
-    background-image: linear-gradient(163deg, #db9cf5 0%, #3c7fd8 100%);
+    background-image: linear-gradient(163deg, #ffec5d 0%, #f205e6 100%);
     border-radius: 20px;
     transition: all 0.3s;
+    opacity: 80%;
   }
   .card2 {
     width: 20vw;
     height: 40vh;
-    background: linear-gradient(145deg,#ffffff, #e6e6e6);
+    background: linear-gradient(145deg,#ffffff, #d4cbcb);
     display: flex;
-    flex-direction: column;justify-content: center;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 1vw;
     border-radius: 20px;
     transition: all 0.2s;
+    opacity: 80%;
   }
   .card2:hover {
     transform: scale(0.98);

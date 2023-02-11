@@ -2,7 +2,7 @@
   <div class="wrapper">
     <Nav />
     <NewTask @addTitle="getTasks" />
-    <h1>Tareas:</h1>
+    <!-- <h1>Tareas:</h1> -->
 
     <!-- Cajitas de las task abajo -->
     <div class="boxflex">
@@ -66,6 +66,11 @@ getTasks();
   justify-content: center;
   gap: 2vw;
   height: auto;
+  background-image: url("../../assets/mar-de-soledad_1920x1080_xtrafondos.com.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 10vh;
+  padding-bottom: 15vh;
   /* background-image: url("../../assets/mar-de-soledad_1920x1080_xtrafondos.com.jpg");
   background-attachment: fixed;
   background-size: cover;
