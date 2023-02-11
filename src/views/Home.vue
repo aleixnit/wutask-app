@@ -1,15 +1,11 @@
 <template>
   <div class="wrapper">
     <Nav />
-    <!-- <div class="content">  -->
-    <!-- <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link> -->
-    <!-- </div> -->
-    <!-- En la linea de update task, podría ir @deleteTask="getTasks" -->
-
     <NewTask @addTitle="getTasks" />
     <h1>Tareas:</h1>
-    <div>
+
+    <!-- Cajitas de las task abajo -->
+    <div class="boxflex">
       <TaskItem
         v-for="task in tasks"
         :key="task.id"
@@ -17,7 +13,9 @@
         @updateTask="getTasks"
       />
     </div>
+
     <FooterComp />
+  
   </div>
 </template>
 
@@ -40,10 +38,40 @@ const getTasks = async () => {
   tasks.value = await taskStore.fetchTasks();
 };
 
+//Funcion para completar tarea conectandose a Supabase
+const completeTaskSupabase = async (taskObject) => {
+  // initial log to verifiy that is connected
+/*   console.log("click me"); */
+  // log to verifiy that we are recievign the data from the childComp named "taskItem" and view it on the console
+ /*  console.log(taskObject.id);
+  console.log(taskObject.is_complete); */
+  // variable to store the OPPOSITE value of the data received from the child component with the logical operator "!" !===opposite
+  let changeTaskBooleanValue = !taskObject.is_complete;
+  let taskId = taskObject.id;
+  // log to verify that we have changed correctly the value of the recived data
+ /*  console.log(changeTaskBooleanValue, taskId); */
+  await taskStore.completeTask(changeTaskBooleanValue, taskId);
+  //getTasks();
+};
+
 getTasks();
 </script>
 
 <style>
+
+/* Esta linea es las cajitas de las task */
+.boxflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  height: auto;
+  /* background-image: url("../../assets/mar-de-soledad_1920x1080_xtrafondos.com.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -2; */
+  /* border: solid 1px red; */
+}
 </style>
 
 <!-- 

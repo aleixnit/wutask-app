@@ -8,11 +8,93 @@
     --fontBody: 'Helvetica';
 } */
 
-/* SignIn Component */
+/* boton animado --------------------------------------------------------------------------1*/
+.botton1 {
+    --color: #4469af;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+  }
+  
+  .botton1:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+  }
+  
+  .botton1:hover {
+    color: #fff;
+  }
+  
+  .botton1:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+  }
+  
+  .botton1:hover:before {
+    top: -30px;
+    left: -30px;
+  }
+  
+  .botton1:active:before {
+    background: #4469af;
+    transition: background 0s;
+  }
 
-/* h1 {
-    color: var(--colorRed);
-} */
+  /* card task----------------------------------------------------------------------*/
+  .card {
+    width: 20vw;
+    height: 40vh;
+    background-image: linear-gradient(163deg, #db9cf5 0%, #3c7fd8 100%);
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+  .card2 {
+    width: 20vw;
+    height: 40vh;
+    background: linear-gradient(145deg,#ffffff, #e6e6e6);
+    display: flex;
+    flex-direction: column;justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .card2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+  }
+  .card:hover {
+    box-shadow: 0px 0px 30px 1px rgba(230, 159, 250, 0.3);
+  }
+
+
+  /* SignIn Component */
+
+
+h1 {
+    margin-bottom: 7vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 3vw;
+}
 
 /* SignUp Component */
 

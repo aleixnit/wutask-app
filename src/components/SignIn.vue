@@ -1,14 +1,14 @@
 <!-- COMPONENTE BOILERPLATE -->
- 
-  <template>
+
+<template>
   <div class="fondo">
-    <div class="container">
+    <div class="loginpage">
       <img src="/assets/Logo1.png" alt="Logo Task App" />
       <h3>Bienvenido a la App de tus Tareas</h3>
       <p>Organiza las tareas de tu dia a dia</p>
 
       <!-- FORMULARIO -->
-      <form class="form-sign-in" @submit.prevent="signIn">
+      <form @submit.prevent="signIn">
         <div class="form">
           <div class="form-input">
             <label for="email" class="input-field-label" />
@@ -24,7 +24,7 @@
           <div class="form-input">
             <label for="password" class="input-field-label" />
             <input
-              type="text"
+              type="password"
               id="password"
               class="input-field"
               placeholder="Introduce tu contraseña"
@@ -34,7 +34,11 @@
           </div>
 
           <!-- REGISTRARSE / SIGN UP -->
-          <button type="submit" class="registrarse">Iniciar sesión</button>
+          <button type="submit" class="botton1">
+            Iniciar sesión
+
+            <!-- boton animado -->
+          </button>
           <p>
             No tienes una cuenta?
             <PersonalRouter
@@ -84,23 +88,6 @@ const signIn = async () => {
   }
 };
 
-// // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
-// const signIn = async () => {
-//     try {
-//       // calls the user store and send the users info to backend to logIn
-//       const user = await useUserStore().signIn(email.value, password.value);
-//       // redirects user to the homeView
-//       redirect.push({ path: "/" });
-//     } catch (error) {
-//       // displays error message
-//       errorMsg.value = error.message;
-//       // hides error message
-//       setTimeout(() => {
-//         errorMsg.value = null;
-//       }, 5000);
-//   }
-//   errorMsg.value = "error";
-// };
 </script>
 
 <style scoped>
@@ -113,23 +100,23 @@ const signIn = async () => {
   align-items: center;
 }
 
-.container {
+.loginpage {
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 95vh;
+  height: 90vh;
+  width: 60vw;
 }
 
-.container h3 {
+.loginpage h3 {
   font-size: 2vw;
   margin-top: 2.5vw;
   margin-bottom: 1.5vw;
 }
 
-.container p {
+.loginpage p {
   padding-left: 20vw;
   padding-right: 20vw;
   margin-bottom: 1.5vw;
@@ -142,30 +129,22 @@ const signIn = async () => {
   align-items: center;
 }
 
-.form-input input {
-  width: 40vw;
-  height: 3vw;
+/* animacion inputs */
+.input-field {
   margin-top: 1.5vw;
-  margin-bottom: 1.5vw;
-  border-radius: 0.7vw;
-  border: 0vw;
-  padding-left:3vw;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-}
-
-.registrarse {
-  background-color: black;
-  color: white;
-  margin-top: 1.5vw;
-  margin-bottom: 1.5vw;
+  background-color: white;
   width: 40vw;
-  height: 3vw;
-  border-radius: 0.7vw;
-  border: 0vw;
+  height: 2vw;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }
-
-.registrarse:hover {
-  background-color: rgb(68,105,175);
-}
+/* .input-field:focus {
+  color:  #4469af;
+  background-color: white;
+  outline-color:  #4469af;
+  box-shadow: -3px -3px 15px #4469af;
+  transition: .1s;
+  transition-property: box-shadow;
+} */
 </style>

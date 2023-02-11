@@ -38,11 +38,21 @@ const editTask = async (title, description, id) => {
  }).match({id: id});
 }
 
+//completar tareas
+const completeTask = async (valorDeBooleano, id) => {
+  let { data: tasks, error } = await supabase
+    .from("tasks")
+    .update({ is_complete: valorDeBooleano })
+    .match({ id: id });
+};
+
   // borrar tareas de supabase
   const deleteTask = async (id) => {
     const { data, error } = await supabase.from("tasks").delete().match({
       id: id,
     });
   };
-  return { tasksArr, fetchTasks, addTask, deleteTask, editTask };
+  return { tasksArr, fetchTasks, addTask, deleteTask, editTask, completeTask };
 });
+
+//completar tareas

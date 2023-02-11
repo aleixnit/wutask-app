@@ -1,29 +1,34 @@
 <template>
   <nav class="menu">
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-    <img class="navbar-img"  src="/assets/Logo1.png" alt="">
+    <img class="navbar-img" src="/assets/165307706_10159118078709812_332331654461491189_n.jpg" alt="" />
     <router-link to="/"> Home </router-link>
 
     <!-- Esto es el menú central del navegador -->
     <div class="menu-central">
       <ul>
         <li>
+          <!-- <button class="button-nav"> -->
           <router-link to="/">Reloj</router-link>
+          <!-- </button> -->
         </li>
-
+      </ul>
+    </div>
+    <div class="menu-central">
+      <ul>
         <li>
           <router-link to="/account">Perfil</router-link>
         </li>
       </ul>
     </div>
 
-    <div>
+    <div class="log-out menu-central">
       <ul>
-        <li class="log-out-welcome">
+        <li>
           <p>Welcome back, {{ user.email }}</p>
         </li>
         <li>
-          <button @click="signOut" class="button">Cerrar sesión</button>
+          <button @click="signOut" class="botton1">Cerrar sesión</button>
         </li>
       </ul>
     </div>
@@ -65,10 +70,10 @@ const signOut = async () => {
 </script>
 
 <style>
-
 .menu {
   height: 15vh;
-  border: solid 1px red;
+  color: white;
+  background-color: black;
 }
 
 .navbar-img {
@@ -79,7 +84,13 @@ const signOut = async () => {
   display: flex;
   flex-direction: row;
   gap: 15vw;
-  border: solid 1px red;
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 nav {
@@ -96,5 +107,52 @@ nav ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #fff;
+}
+
+.menu-central {
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: 0;
+  border: 0;
+  padding: 1rem;
+  list-style: none;
+}
+
+.menu-central:before {
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  margin-right: 10px;
+  transition: all 0.42s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 0;
+}
+
+.menu-central:hover:before {
+  background-color: #fff;
+  width: 3rem;
+  color: white;
+}
+
+.menu-central:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.log-out {
+  font-size: 1vw;
+  gap: 0px;
 }
 </style>
