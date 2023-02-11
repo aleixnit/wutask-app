@@ -1,6 +1,5 @@
 <template>
   <div class="container-task">
-    
     <div class="div1">
       <h1>¡Añade una nueva tarea!</h1>
       <p>Keep your life organized, prepare for a trip ? Start here</p>
@@ -25,7 +24,23 @@
       </div>
     </div>
     <div class="div 3">
-      <button @click="addTask" class="button">Añadir</button>
+      <button @click="addTask" class="button2">
+        <p>Añadir</p>
+        <svg
+          stroke-width="4"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+      </button>
     </div>
   </div>
 </template>
@@ -121,10 +136,83 @@ const addTask = () => {
   opacity: 35%;
 }
 
-.button {
+.button2 {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.button2 {
+  --primary-color: #ffffff;
+  --hovered-color:#fdc999;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 3vw;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.button2 p {
+  margin: 0;
+  position: relative;
+  font-size: 3vw;
+  color: var(--primary-color)
+}
+
+.button2::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.button2 p::before {
+  position: absolute;
+/*   box-sizing: border-box; */
+  content: "Añadir";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.button2:hover::after {
+  width: 100%;
+}
+
+.button2:hover p::before {
+  width: 100%;
+}
+
+.button2:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color)
+}
+
+.button2 svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+
+
+
+
+
+
+/* .button {
   height: 10vw;
   width: 10vw;
-  /* border: solid 1px red; */
 }
 
 .button {
@@ -196,5 +284,5 @@ const addTask = () => {
 
 .input-field:last-of-type input {
   height: 15vh;
-}
+} */
 </style>

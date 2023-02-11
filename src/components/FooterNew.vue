@@ -1,6 +1,7 @@
 <template>
     <div class="footer">
-      <p>esto es un footer</p>
+      <img src="../../assets/165307706_10159118078709812_332331654461491189_n.jpg" alt="">
+      <p>© 2023 Da Real Tasks App. All rights reserved. 2ndo proyecto en Front-End, creado con mucho ❤️ by Aleix Aguilar</p>
     </div>
   </template>
   
@@ -10,11 +11,20 @@
   .footer {
     width: 100vw;
     height: 15vh;
-    background-color: black;
+    background-image: url("../../assets/AdobeStock_234342732.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
+    color:rgb(253, 243, 196);
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+  }
+
+  .footer img {
+ width: 5vw;
   }
   </style>
   

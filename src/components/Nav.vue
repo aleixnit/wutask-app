@@ -22,7 +22,7 @@
       </ul>
     </div>
 
-    <div class="">
+    <div class="log-out">
       <ul>
         <li>
           <p>Welcome back, {{ user.email }}</p>
@@ -75,11 +75,6 @@ const signOut = async () => {
   color: white;
   background-color: black;
 }
-
-.navbar-img {
-  width: 5vw;
-}
-
 .menu-central ul {
   display: flex;
   flex-direction: row;
@@ -94,11 +89,15 @@ const signOut = async () => {
 } */
 
 nav {
-  background-color:black;
+  background-image:url("../../assets/AdobeStock_234342732.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
   display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 nav ul {
@@ -110,8 +109,19 @@ nav ul {
   color: #fff;
 }
 
+.navbar-img {
+  width: 5vw;
+}
+
 .links-visitados:visited {
   color:#fff;
 }
+
+.log-out ul {
+  display: flex;
+  flex-direction: row;
+  gap:3vw;
+}
+
 
 </style>

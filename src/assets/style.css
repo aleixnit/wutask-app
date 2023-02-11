@@ -10,7 +10,7 @@
 
 /* boton animado --------------------------------------------------------------------------1*/
 .botton1 {
-    --color: #4469af;
+    --color: #e48970;
     font-family: inherit;
     display: inline-block;
     width: 8em;
@@ -24,7 +24,7 @@
     font-size: 17px;
     border-radius: 6px;
     font-weight: 500;
-    color: var(--color);
+    color: black;
   }
   
   .botton1:before {
@@ -53,7 +53,7 @@
   }
   
   .botton1:active:before {
-    background: #4469af;
+    background: #fdc999;
     transition: background 0s;
   }
 
