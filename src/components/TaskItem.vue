@@ -105,8 +105,11 @@ const completedTask = ref(false)
     text-decoration: line-through;
 }
 
-.task-item-fondo {
-  
+.buttons {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 1vw;
 }
 </style>
 

@@ -6,14 +6,27 @@
       src="/assets/165307706_10159118078709812_332331654461491189_n.jpg"
       alt=""
     />
-    <router-link class="links-visitados" to="/"> Home </router-link>
+    <router-link class="links-visitados" to="/"
+      ><a class="fancy" href="#">
+        <span class="top-key"></span>
+        <span class="text">Inicio</span>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+      </a>
+    </router-link>
 
     <!-- Esto es el menú central del navegador -->
     <div class="">
       <ul>
         <li>
           <!-- <button class="button-nav"> -->
-          <router-link class="links-visitados" to="/">Reloj</router-link>
+          <router-link class="links-visitados" to="/"
+            ><a class="fancy" href="#">
+              <span class="top-key"></span>
+              <span class="text">Reloj</span>
+              <span class="bottom-key-1"></span>
+              <span class="bottom-key-2"></span> </a
+          ></router-link>
           <!-- </button> -->
         </li>
       </ul>
@@ -22,7 +35,12 @@
       <ul>
         <li>
           <router-link class="links-visitados" to="/account"
-            >Perfil</router-link
+            ><a class="fancy" href="#">
+  <span class="top-key"></span>
+  <span class="text">Perfil</span>
+  <span class="bottom-key-1"></span>
+  <span class="bottom-key-2"></span>
+</a></router-link
           >
         </li>
       </ul>
@@ -100,10 +118,12 @@ nav {
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  padding-top: 10vh;
-  padding-bottom: 20vh;
+  padding-top: 5vh;
+  padding-bottom: 15vh;
   position: relative;
   z-index: 2;
+  font-size: 1.3vw;
+  font-weight: bold;
 }
 
 nav a {
