@@ -1,43 +1,61 @@
 <template>
   <div class="task-item-fondo">
-  <div class="card">
-    <div class="card2">
-      <h3 :class="props.task.is_complete ? 'case1': 'case2'" >{{ task.title }}</h3>
-      <p :class="props.task.is_complete ? 'case1': 'case2'">{{ task.description }}</p>
-      <!-- <button @click=>Marcar como completada</button> -->
-      <div class="buttons">
-        <button @click="completeTask" class="botton1">
-          {{ task.is_complete ? "Sin Realizar 😐" : "Realizada!" }}
-        </button>
+    <div class="card">
+      <div class="card2">
+        <!-- los case hacen relacion a el boton de completar -->
+        <h3 :class="props.task.is_complete ? 'done' : 'pending'">
+          {{ task.title }}
+        </h3>
+        <p :class="props.task.is_complete ? 'done' : 'pending'">
+          {{ task.description }}
+        </p>
+        <!-- <button @click=>Marcar como completada</button> -->
+        <div class="buttons">
+          <button @click="completeTask" class="botton1">
+            Completar
+            <!-- {{ task.is_complete ? "No completada 😐" : "Completada!" }} -->
+          </button>
 
-        <!-- boton de borrar tareas -->
-        <button @click="deleteTask" class="botton1"><p>Borrar {{ task.title }}</p> </button>
+          <!-- boton de borrar tareas -->
+          <button @click="showModalToggle" class="botton1">Delete</button>
 
-        <!-- boton para editar tareas -->
-        <button @click="inputToggle" class="botton1"><p>Editar {{ task.title }}</p></button>
-        <div v-if="showInput">
-          <div>
-            <p>Escribe un título</p>
-            <input
-              type="text"
-              v-model="newTitle"
-              placeholder="Insert title..."
-            />
+          <div class="modal" v-if="showModal">
+            <h2>Seguro que quieres borrar esta tarea?</h2>
+            <button @click="deleteTask">Si quiero!</button>
+            <button @click="showModalToggle">No, mejor no!</button>
           </div>
-          <div>
-            <p>Escribe una descripción</p>
-            <input
-              type="text"
-              v-model="newDescription"
-              placeholder="Insert description..."
-            />
+
+          <!-- chatgpt mdal ------------------------------------------------------------------ -->
+
+          <!-- fin chatgpt modal ---------------------------------------------------------------->
+
+          <!-- boton para editar tareas -->
+          <button @click="inputToggle" class="botton1">
+            <p>Editar {{ task.title }}</p>
+          </button>
+          <div v-if="showInput">
+            <div>
+              <p>Escribe un título</p>
+              <input
+                type="text"
+                v-model="newTitle"
+                placeholder="Insert title..."
+              />
+            </div>
+            <div>
+              <p>Escribe una descripción</p>
+              <input
+                type="text"
+                v-model="newDescription"
+                placeholder="Insert description..."
+              />
+            </div>
+            <button @click="sendData"><p>Enviar datos</p></button>
           </div>
-          <button @click="sendData"><p>Enviar datos</p></button>
         </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script setup>
@@ -45,8 +63,11 @@ import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 
+// funcion para refrescar al editar, borrar o completar
+const emit = defineEmits(["childComplete", "editChild"]);
+// const emit = defineEmits(["updateTask"]);
+
 const taskStore = useTaskStore();
-const emit = defineEmits(["updateTask"]);
 
 const props = defineProps({
   task: Object,
@@ -60,10 +81,21 @@ function inputToggle() {
   showInput.value = !showInput.value;
 }
 
+//funcion para completar tareas
+const completedTask = () => {
+  emit("childComplete", props.task);
+};
+
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async () => {
   await taskStore.deleteTask(props.task.id);
   emit("updateTask");
+};
+
+//funcion para mostrar el modal para el delete
+const showModal = ref(false);
+const showModalToggle = () => {
+  showModal.value = !showModal.value;
 };
 
 const showErrorMess = ref(false);
@@ -80,37 +112,65 @@ const sendData = async () => {
     }, 5000);
   } else {
     taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
-    emit("updateTask");
     showInput.value = !showInput.value;
+    emit("editChild", newTaskEdited);
   }
 };
-
-//funcion para completar las tareas
-
-const completeTask = () => {
-    emit("childComplete", props.task)
-}
-const completedTask = ref(false)
-
-
-
-
 </script>
 
 <style>
-.case2{
-    text-decoration: none;
+.done {
+  /* color: green; */
+  text-decoration: line-through;
 }
-.case1{
-    text-decoration: line-through;
+.pending {
+  /* color: red; */
+  text-decoration: none;
 }
 
 .buttons {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 1vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
 }
+
+/* modal chatgpt */
+/* Estilos para el modal */
+/* .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: rgba(0, 0, 0,);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  max-width: 400px;
+  z-index: 5;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+} */
 </style>
 
 <!--

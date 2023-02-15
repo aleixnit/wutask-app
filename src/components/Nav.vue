@@ -3,7 +3,7 @@
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
     <img
       class="navbar-img"
-      src="/assets/165307706_10159118078709812_332331654461491189_n.jpg"
+      src="/assets/logowu.png"
       alt=""
     />
     <router-link class="links-visitados" to="/"
@@ -36,12 +36,11 @@
         <li>
           <router-link class="links-visitados" to="/account"
             ><a class="fancy" href="#">
-  <span class="top-key"></span>
-  <span class="text">Perfil</span>
-  <span class="bottom-key-1"></span>
-  <span class="bottom-key-2"></span>
-</a></router-link
-          >
+              <span class="top-key"></span>
+              <span class="text">Perfil</span>
+              <span class="bottom-key-1"></span>
+              <span class="bottom-key-2"></span> </a
+          ></router-link>
         </li>
       </ul>
     </div>
@@ -49,10 +48,16 @@
     <div class="log-out">
       <ul>
         <li>
-          <p>Welcome back, {{ user.email }}</p>
+          <p>Welcome back, <span class="gradient-text">{{ user.email }}</span></p>
         </li>
         <li>
-          <button @click="signOut" class="botton1">Cerrar sesión</button>
+          <a @click="signOut" class="fancy" href="#">
+            <span class="top-key"></span>
+            <span class="text">Cerrar sesión</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+          </a>
+          <!-- <button @click="signOut" class="botton1">Cerrar sesión</button> -->
         </li>
       </ul>
     </div>
@@ -139,7 +144,8 @@ nav ul {
 }
 
 .navbar-img {
-  width: 5vw;
+  width: 7vw;
+  border-radius: 0%;
 }
 
 .links-visitados:visited {
@@ -147,9 +153,24 @@ nav ul {
   text-decoration: none;
 }
 
+.gradient-text {
+  background-image: linear-gradient(to left, #efdfdf, #e48970);
+  -webkit-background-clip: text; /* Prefijo necesario para que funcione en Chrome */
+  background-clip: text;
+  color: transparent;
+}
+
 .log-out ul {
   display: flex;
   flex-direction: row;
   gap: 3vw;
+}
+
+.log-out ul li p {
+  font-size: 0.9vw;
+}
+
+.log-out ul li p span{
+  /* color: #e48970; */
 }
 </style>

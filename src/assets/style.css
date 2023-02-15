@@ -8,215 +8,320 @@
     --fontBody: 'Helvetica';
 } */
 
+/* inputs animados ----------------------------------------------------------------------*/
+.group {
+  position: relative;
+ }
+ 
+ .input {
+  font-size: 16px;
+  color:#ffbfad;
+  text-shadow: 4px 1px 7px rgb(0, 0, 0);
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 48vw;
+  border: none;
+  border-bottom: 1px solid  #e48970;
+  background: transparent;
+ }
+ 
+ .input:focus {
+  outline: none;
+ }
+ 
+ label {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+ }
+ 
+ .input:focus ~ label, .input:valid ~ label {
+  top: -20px;
+  font-size: 1.5vw;
+  color: #ffffff;
+ }
+ 
+ .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+ }
+ 
+ .bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0%;
+  left: 0vw;
+  bottom: 1px;
+  position: absolute;
+  background: linear-gradient( to left, #e8b3a5, #e48970);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+ }
+ 
+ .bar:before {
+  left: 50%;
+ }
+ 
+ .bar:after {
+  right: 50%;
+ }
+ 
+ .input:focus ~ .bar:before, .input:focus ~ .bar:after {
+  width: 42.5vw;
+ }
+ 
+ .highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+ }
+ 
+ .input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+ }
+ 
+ @keyframes inputHighlighter {
+  from {
+   background: #5264AE;
+  }
+ 
+  to {
+   width: 0;
+   background: transparent;
+  }
+ }
+
 /* boton animado --------------------------------------------------------------------------1*/
 .botton1 {
-    --color: #e48970;
-    font-family: inherit;
-    display: inline-block;
-    width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid var(--color);
-    transition: color 0.5s;
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 6px;
-    font-weight: 500;
-    color: black;
-  }
-  
-  .botton1:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--color);
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-  }
-  
-  .botton1:hover {
-    color: #fff;
-  }
-  
-  .botton1:before {
-    top: 100%;
-    left: 100%;
-    transition: all 0.7s;
-  }
-  
-  .botton1:hover:before {
-    top: -30px;
-    left: -30px;
-  }
-  
-  .botton1:active:before {
-    background: #fdc999;
-    transition: background 0s;
-  }
+  --color: #e48970;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: black;
+}
 
-  /* BOTONES DEL MENUUUU -------------------------------------------- */
+.botton1:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
 
-  /*background, borde y ????? */
-  .fancy {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    border-radius: 0;
-    box-sizing: border-box;
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-    float: right;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin: 0;
-    outline: none;
-    overflow: visible;
-    padding: 1.25em 2em;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-transform: none;
-    transition: all 0.3s ease-in-out;
-    user-select: none;
-    font-size: 13px;
-   }
-   
-   /*color de la rallita*/
-   .fancy::before {
-    content: " ";
-    width: 1.5625rem;
-    height: 2px;
-    background: white;
-    top: 50%;
-    left: 1.5em;
-    position: absolute;
-    transform: translateY(-50%);
-    transform-origin: center;
-    transition: background 0.3s linear, width 0.3s linear;
-   }
-   
-   /*texto del boton */
-   .fancy .text {
-    font-size: 1.125em;
-    line-height: 1.33333em;
-    padding-left: 2em;
-    display: block;
-    text-align: left;
-    transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-   }
-   
-   /* rallite de arriba */
-   .fancy .top-key {
-    height: 2px;
-    width: 1.5625rem;
-    top: -2px;
-    left: 0.625rem;
-    position: absolute;
-    background: #e48970;
-    transition: width 0.5s ease-out, left 0.3s ease-out;
-   }
-   
-   /* rallita grande de abajo */
-   .fancy .bottom-key-1 {
-    height: 2px;
-    width: 1.5625rem;
-    right: 1.875rem;
-    bottom: -2px;
-    position: absolute;
-    background: #e48970;
-    transition: width 0.5s ease-out, right 0.3s ease-out;
-   }
-   
-   /*rallita pequeña de abajo */
-   .fancy .bottom-key-2 {
-    height: 2px;
-    width: 0.625rem;
-    right: 0.625rem;
-    bottom: -2px;
-    position: absolute;
-    background: #e48970;
-    transition: width 0.5s ease-out, right 0.3s ease-out;
-   }
-   
-   .fancy:hover {
-    color: white;
-    background: #e48970;
-   }
-   
-   .fancy:hover::before {
-    width: 0.9375rem;
-    background: white;
-   }
-   
-   .fancy:hover .text {
-    color: white;
-    padding-left: 1.5em;
-   }
-   
-   .fancy:hover .top-key {
-    left: -2px;
-    width: 0px;
-   }
-   
-   .fancy:hover .bottom-key-1,
-    .fancy:hover .bottom-key-2 {
-    right: 0;
-    width: 0;
-   }
+.botton1:hover {
+  color: #fff;
+}
 
-  /* card task----------------------------------------------------------------------*/
-  .card {
-    width: 20vw;
-    height: 40vh;
-    background-image: linear-gradient(163deg, #ffec5d 0%, #f205e6 100%);
-    border-radius: 20px;
-    transition: all 0.3s;
-    opacity: 80%;
-  }
-  .card2 {
-    width: 20vw;
-    height: 40vh;
-    background: linear-gradient(145deg,#ffffff, #d4cbcb);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1vw;
-    border-radius: 20px;
-    transition: all 0.2s;
-    opacity: 80%;
-  }
-  .card2:hover {
-    transform: scale(0.98);
-    border-radius: 20px;
-  }
-  .card:hover {
-    box-shadow: 0px 0px 30px 1px rgba(230, 159, 250, 0.3);
-  }
+.botton1:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
 
+.botton1:hover:before {
+  top: -30px;
+  left: -30px;
+}
 
-  /* SignIn Component */
+.botton1:active:before {
+  background: #fdc999;
+  transition: background 0s;
+}
+
+/* BOTONES DEL MENUUUU -------------------------------------------- */
+
+/*<a class="fancy" href="#">
+              <span class="top-key"></span>
+              <span class="text">Perfil</span>
+              <span class="bottom-key-1"></span>
+              <span class="bottom-key-2"></span>*/
+/*background, borde y ????? */
+.fancy {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+/*color de la rallita*/
+.fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: white;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+/*texto del boton */
+.fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+/* rallite de arriba */
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e48970;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+/* rallita grande de abajo */
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e48970;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+/*rallita pequeña de abajo */
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e48970;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  color: white;
+  background: linear-gradient( #e8b3a5, #e48970);
+  cursor: crosshair;
+}
+
+.fancy:hover::before {
+  width: 0.9375rem;
+  background: white;
+}
+
+.fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+
+/* card task----------------------------------------------------------------------*/
+.card {
+  width: 20vw;
+  height: auto;
+  background-image: linear-gradient(163deg, #ffec5d 0%, #e48970 100%);
+  border-radius: 20px;
+  transition: all 0.3s;
+  opacity: 80%;
+}
+.card2 {
+  width: 20vw;
+  height: auto;
+  background: linear-gradient(145deg, #ffffff, #d4cbcb);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  border-radius: 20px;
+  transition: all 0.2s;
+  opacity: 80%;
+}
+.card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(230, 159, 250, 0.3);
+}
+
+/* SignIn Component */
 
 * {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 h1 {
-    margin-bottom: 7vh;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 3vw;
+  margin-bottom: 7vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 3vw;
 }
 
 h3 {
   text-align: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vw;
 }
 
 p {

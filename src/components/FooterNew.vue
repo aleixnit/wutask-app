@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-      <img src="../../assets/165307706_10159118078709812_332331654461491189_n.jpg" alt="">
+      <img src="../../assets/logowu.png" alt="">
       <p>© 2023 Da Real Tasks App. All rights reserved. 2ndo proyecto en Front-End, creado con mucho ❤️ by Aleix Aguilar</p>
     </div>
   </template>
@@ -25,6 +25,7 @@
 
   .footer img {
  width: 5vw;
+ border-radius: 0%;
   }
   </style>
   

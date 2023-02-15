@@ -1,7 +1,10 @@
 <template>
+  <div class="fondoperfil">
   <Nav />
   <h1>Name: {{username}}</h1>
   <img :src="avatar_url ? avatar_url : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'" alt="Profile picture">
+  <FooterComp />
+</div>
 </template>
 
 <script setup>
@@ -9,6 +12,7 @@
   import { onMounted, ref, toRefs } from 'vue'
   import { useUserStore } from "../stores/user";
   import Nav from '../components/Nav.vue';
+  import FooterComp from '../components/FooterNew.vue'
 
   const userStore = useUserStore();
 
@@ -45,4 +49,11 @@ img {
   width: 200px;
   border-radius: 50%;
 }
+
+.fondoperfil {
+  background-image: url("../../assets/chica-y-gato-durmiendo-en-la-tarde-lofi-art_1920x1080_xtrafondos.com.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 </style>

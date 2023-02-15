@@ -2,52 +2,51 @@
   <div class="container-task">
     <div class="div1">
       <h1>
-        ¡Crea y edita tareas! <br />
-        La organización es la clave del éxito.
+        <div>¡<span class="underlined-text">Crea</span> y <span class="underlined-text">edita</span> tareas! <br /></div>
+        <div>La <span class="underlined-text">organización</span> es la clave del éxito.</div>
       </h1>
       <p>
         " Tus días están contados. Úsalos para abrir las ventanas de tu alma y
         que entre el sol. <br />
-        Si no lo haces, el sol se pondrá en el horizonte y tú con él. " 
-        <span style="font-weight: bold"> - Marco Aurelio</span>
+        Si no lo haces, el sol se pondrá en el horizonte y tú con él. " -
+        <span
+          style="
+            font-weight: bold;
+            text-decoration: underline;
+            text-decoration-color: #e48970;
+          "
+        >
+          Marco Aurelio</span
+        >
       </p>
       <div v-if="showErrorMessage">
         <p class="error-text">{{ errorMessage }}</p>
       </div>
     </div>
+
     <div class="div2">
-      <div class="input-field">
-        <input
-          type="text"
-          placeholder="Añade el título de la tarea"
-          v-model="name"
-        />
+      <!-- input animado -->
+      <div class="group">
+        <input required="" type="text" v-model="name" class="input" />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Título de la tarea</label>
       </div>
-      <div class="input-field">
-        <input
-          type="text"
-          placeholder="Añade la descripción de la tarea"
-          v-model="description"
-        />
+
+      <div class="group">
+        <input required="" type="text" v-model="description" class="input" />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Descripción de la tarea</label>
       </div>
     </div>
+
     <div class="div 3">
-      <button @click="addTask" class="button2">
-        <p>Añadir</p>
-        <svg
-          stroke-width="4"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          fill="none"
-          class="h-6 w-6"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-            stroke-linejoin="round"
-            stroke-linecap="round"
-          ></path>
-        </svg>
+      <button @click="addTask" class="fancy">
+        <span class="top-key"></span>
+        <span class="text">Añadir tarea</span>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
       </button>
     </div>
   </div>
@@ -121,36 +120,46 @@ const addTask = () => {
   padding-top: 3vh;
 }
 
+.underlined-text {
+  background-image: linear-gradient(to left, #ebc3b8, #e48970);
+  background-size: 100% 0.4vw; /* Establece el tamaño del subrayado */
+  background-position: 0 95%; /* Establece la posición del subrayado */
+  background-repeat: no-repeat; /* Evita que se repita el subrayado */
+  border-radius: 1vw;
+}
+
 .div1 p {
   line-height: 3, 5vh;
   font-size: 1.3vw;
   font-style: italic;
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
 }
 
 .div2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2vw;
+  margin-top: 1.5vw;
+  margin-bottom: 1vw;
   /* border: solid 1px red; */
   /* border: solid 1px red; */
 }
 
 .container-task h1 {
   margin-top: 5vw;
+  display: flex;
+  flex-direction: column;
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
 }
 .error-text {
   font-size: 0.8vw;
-}
-
-.input-field input {
-  width: 40vw;
-  height: 5vh;
-  margin-top: 2.5vh;
-  margin-bottom: 2.5vh;
-  border-radius: 1vw;
-  border-width: 0.1vw;
-  padding-left: 2vw;
-  opacity: 35%;
+  background: linear-gradient( #e8b3a5, #e48970);
+  border-radius: 2vw;
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-top: 3vh;
 }
 
 .button2 {
@@ -220,5 +229,4 @@ const addTask = () => {
   width: 15px;
   transition-delay: 0.2s;
 }
-
 </style>

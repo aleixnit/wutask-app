@@ -11,6 +11,7 @@
         :key="task.id"
         :task="task"
         @updateTask="getTasks"
+        @childComplete="completeTaskSupabase"
       />
     </div>
 
@@ -20,7 +21,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onUpdated } from "vue";
 import { useTaskStore } from "../stores/task";
 import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
@@ -38,27 +39,30 @@ const getTasks = async () => {
   tasks.value = await taskStore.fetchTasks();
 };
 
-//Funcion para completar tarea conectandose a Supabase
-const completeTaskSupabase = async (taskObject) => {
-  // initial log to verifiy that is connected
-/*   console.log("click me"); */
-  // log to verifiy that we are recievign the data from the childComp named "taskItem" and view it on the console
- /*  console.log(taskObject.id);
-  console.log(taskObject.is_complete); */
-  // variable to store the OPPOSITE value of the data received from the child component with the logical operator "!" !===opposite
-  let changeTaskBooleanValue = !taskObject.is_complete;
-  let taskId = taskObject.id;
-  // log to verify that we have changed correctly the value of the recived data
- /*  console.log(changeTaskBooleanValue, taskId); */
-  await taskStore.completeTask(changeTaskBooleanValue, taskId);
-  //getTasks();
-};
-
 getTasks();
+
+onUpdated(() => {
+getTasks();
+});
+
+const completeTaskSupabase = async (taskObject) => {
+  console.log("click");
+  console.log(taskObject); // esto es un objeto que incluye description, id, inserted_at, is_complete, title, user_id
+  console.log(taskObject.id);
+  console.log(taskObject.is_complete); //false
+
+  let changeTaskBooleanValue = !taskObject.is_complete;
+
+  let taskId = taskObject.id;
+
+  await taskStore.completeTask(changeTaskBooleanValue, taskId);
+  
+}
 </script>
 
-<style>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolore quidem illum. Officia autem ea aperiam, quos rerum esse, quod assumenda corrupti nemo magni aliquam natus deserunt molestiae totam laboriosam.
 
+<style>
 /* Esta linea es las cajitas de las task */
 .boxflex {
   display: flex;
@@ -66,8 +70,8 @@ getTasks();
   justify-content: center;
   gap: 2vw;
   height: auto;
-  background-image: url("../../assets/caminando-al-atardecer-arte-digital_1920x1080_xtrafondos.com.jpg");
-  background-size: cover;
+  background-image: url("../../assets/fondotaskitem.png") ;
+  background-size:cover;
   background-attachment: fixed;
   padding-top: 85vh;
   padding-bottom: 15vh;
