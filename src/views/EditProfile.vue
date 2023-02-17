@@ -3,15 +3,15 @@
     
     <form>
       
-      <label for="name">Insert your name:</label>
+      <label for="name">Introduce tu nombre</label>
       <input type="text" autocomplete="off" name="name" v-model="name" />
   
      
-      <label for="username">Insert your username:</label>
+      <label for="username">Introduce tu username</label>
       <input type="text" autocomplete="off" name="username" v-model="username" />
   
       
-      <label for="website">Insert your website:</label>
+      <label for="website">Tu sitio web:</label>
       <input type="text" autocomplete="off" name="website" v-model="website" />
   
       
@@ -22,7 +22,7 @@
       />
   
     
-      <button @click.prevent="editProfile">Save changes</button>
+      <button @click.prevent="editProfile">Guardar cambios</button>
     </form>
   </template>
   
@@ -94,7 +94,7 @@
         .from("avatars")
         .upload(filePath, file, { upsert: false });
       avatar_url.value =
-        "https://zkxclgazccxtzdbcydyq.supabase.co/storage/v1/object/public/avatars/" +
+        "https://hzfkzntspuuexihwuuyx.supabase.co" +
         filePath;
       if (uploadError) throw uploadError;
       emit("update:path", filePath);

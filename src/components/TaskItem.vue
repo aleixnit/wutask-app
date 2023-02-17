@@ -12,26 +12,13 @@
         <!-- <button @click=>Marcar como completada</button> -->
         <div class="buttons">
           <button @click="completeTask" class="botton1">
-            Completar
+            <img src="../../assets/comprobar.png" alt="V">
             <!-- {{ task.is_complete ? "No completada 😐" : "Completada!" }} -->
           </button>
-
-          <!-- boton de borrar tareas -->
-          <button @click="showModalToggle" class="botton1">Delete</button>
-
-          <div class="modal" v-if="showModal">
-            <h2>Seguro que quieres borrar esta tarea?</h2>
-            <button @click="deleteTask">Si quiero!</button>
-            <button @click="showModalToggle">No, mejor no!</button>
-          </div>
-
-          <!-- chatgpt mdal ------------------------------------------------------------------ -->
-
-          <!-- fin chatgpt modal ---------------------------------------------------------------->
-
+          
           <!-- boton para editar tareas -->
           <button @click="inputToggle" class="botton1">
-            <p>Editar {{ task.title }}</p>
+            <img src="../../assets/editar.png" alt="Edit">
           </button>
           <div v-if="showInput">
             <div>
@@ -52,6 +39,16 @@
             </div>
             <button @click="sendData"><p>Enviar datos</p></button>
           </div>
+          <!-- boton de borrar tareas -->
+          <button @click="showModalToggle" class="botton1"> <img src="../../assets/papelera_borrar.png" alt="X"></button>
+
+          <div class="modal" v-if="showModal">
+            <h2>Seguro que quieres borrar esta tarea?</h2>
+            <button @click="deleteTask">Si quiero!</button>
+            <button @click="showModalToggle">No, mejor no!</button>
+          </div>
+
+          
         </div>
       </div>
     </div>
@@ -118,60 +115,7 @@ const sendData = async () => {
 };
 </script>
 
-<style>
-.done {
-  /* color: green; */
-  text-decoration: line-through;
-}
-.pending {
-  /* color: red; */
-  text-decoration: none;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  padding-bottom: 2vw;
-}
-
-/* modal chatgpt */
-/* Estilos para el modal */
-/* .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  background-color: rgba(0, 0, 0,);
-}
-
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  max-width: 400px;
-  z-index: 5;
-}
-
-.modal h2 {
-  margin-top: 0;
-}
-
-.modal-buttons {
-  display: flex;
-  justify-content: space-between;
-} */
-</style>
+<style></style>
 
 <!--
 **Hints**

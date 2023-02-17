@@ -8,7 +8,33 @@
     --fontBody: 'Helvetica';
 } */
 
-/* inputs animados ----------------------------------------------------------------------*/
+/* GENERAL CLASSES ---------------------------------------------------------------------------------------*/
+
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 7vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 3vw;
+}
+
+h3 {
+  text-align: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vw;
+}
+
+p {
+  text-align: center;
+}
+
+/* INPUTS animados ---------------------------------------------------------------------------------------*/
 .group {
   position: relative;
  }
@@ -95,7 +121,7 @@
  
  @keyframes inputHighlighter {
   from {
-   background: #5264AE;
+   background: #e48970;
   }
  
   to {
@@ -104,56 +130,42 @@
   }
  }
 
-/* boton animado --------------------------------------------------------------------------1*/
-.botton1 {
-  --color: #e48970;
-  font-family: inherit;
-  display: inline-block;
-  width: 8em;
-  height: 2.6em;
-  line-height: 2.5em;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid var(--color);
-  transition: color 0.5s;
-  z-index: 1;
-  font-size: 17px;
-  border-radius: 6px;
-  font-weight: 500;
-  color: black;
+ 
+ .animation1 {
+  animation: TituloTarea 2s ease 2s 1 normal forwards;
+ }
+ @keyframes TituloTarea {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.4);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }
 
-.botton1:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: var(--color);
-  height: 150px;
-  width: 200px;
-  border-radius: 50%;
+ .animation2 {
+  animation: DescripciónTarea 2s ease 3s 1 normal forwards;
+ }
+ @keyframes DescripciónTarea {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.4);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }
 
-.botton1:hover {
-  color: #fff;
-}
-
-.botton1:before {
-  top: 100%;
-  left: 100%;
-  transition: all 0.7s;
-}
-
-.botton1:hover:before {
-  top: -30px;
-  left: -30px;
-}
-
-.botton1:active:before {
-  background: #fdc999;
-  transition: background 0s;
-}
-
-/* BOTONES DEL MENUUUU -------------------------------------------- */
+/* BOTONES DEL MENUUUU ----------------------------------------------------------------------------------- */
 
 /*<a class="fancy" href="#">
               <span class="top-key"></span>
@@ -272,27 +284,31 @@
   width: 0;
 }
 
-/* card task----------------------------------------------------------------------*/
+/* card task----------------------------------------------------------------------------------------------*/
 .card {
   width: 20vw;
   height: auto;
-  background-image: linear-gradient(163deg, #ffec5d 0%, #e48970 100%);
+  background-image: linear-gradient(163deg, #5c5e5f 0%, #e11818 100%);
   border-radius: 20px;
   transition: all 0.3s;
-  opacity: 80%;
+  /* opacity: 80%; */
 }
 .card2 {
   width: 20vw;
   height: auto;
-  background: linear-gradient(145deg, #ffffff, #d4cbcb);
+  background: linear-gradient(145deg, #ffffff, #e6b3a5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1vw;
-  border-radius: 20px;
   transition: all 0.2s;
-  opacity: 80%;
+  /* opacity: 80%; */
+}
+
+.card2 p {
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 .card2:hover {
   transform: scale(0.98);
@@ -302,34 +318,287 @@
   box-shadow: 0px 0px 30px 1px rgba(230, 159, 250, 0.3);
 }
 
-/* SignIn Component */
-
-* {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+/* NAVBAR COMPONENT --------------------------------------------------------------------------------------- */
+nav {
+  background-color: transparent;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 5vh;
+  padding-bottom: 15vh;
+  position: relative;
+  z-index: 2;
+  font-size: 1.3vw;
+  font-weight: bold;
 }
 
-h1 {
-  margin-bottom: 7vh;
+nav a {
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+  /* padding-inline-start: 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.navbar-img {
+  width: 7vw;
+  border-radius: 0%;
+}
+
+.links-visitados:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.gradient-text {
+  background-image: linear-gradient(to left, #efdfdf, #e48970);
+  -webkit-background-clip: text; /* Prefijo necesario para que funcione en Chrome */
+  background-clip: text;
+  color: transparent;
+}
+
+.log-out ul {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+}
+
+.log-out ul li p {
+  font-size: 0.9vw;
+}
+
+/* SignIn Component -------------------------------------------------------------------------------------- */
+.fondo {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(64, 29, 29, 0.5)), url("../../assets/el-sol-al-amanecer-entre-las-nubes_5120x2880_xtrafondos.com.jpg");
+  background-size: cover;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  text-align: center;
-  font-size: 3vw;
+  align-items: center;
 }
 
-h3 {
+.loginpage {
+  background: rgba(250, 189, 115, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 60vw;
+}
+
+.loginpage img {
+  border-radius: 0;
+  width: 15vw;
+}
+
+.loginpage h3 {
+  font-size: 3vw;
+  margin-top: 2.5vw;
+  margin-bottom: 1.5vw;
+  color: white;
+}
+
+.loginpage p {
+  padding-left: 20vw;
+  padding-right: 20vw;
+  margin-bottom: 1.5vw;
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* NEW TASK COMPONENT ----------------------------------------------------------------------------------- */
+@keyframes fondoAnimadoNewTask {
+	0% {
+		background-position: left center;
+		background-size: 100%;
+	}
+
+	100% {
+		background-position: left center;
+		background-size: 130%;
+	}
+}
+
+.container-task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  height: 90vh;
+  width: 100%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background-image: url("../../assets/el-sol-al-amanecer-entre-las-nubes_5120x2880_xtrafondos.com.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  animation: fondoAnimadoNewTask 40s ease 0s infinite alternate forwards;
+}
+
+.div1 {
+  width: 60%;
+  /* border: solid 1px red; */
+  color: #ffffff;
   text-align: center;
+  padding-top: 3vh;
+}
+
+
+.underlined-text {
+  background-image: linear-gradient(to left, #ebc3b8, #e48970);
+  background-size: 100% 0.4vw; /* Establece el tamaño del subrayado */
+  background-position: 0 95%; /* Establece la posición del subrayado */
+  background-repeat: no-repeat; /* Evita que se repita el subrayado */
+  border-radius: 1vw;
+}
+
+
+.div1 p {
+  line-height: 3, 5vh;
+  font-size: 1.3vw;
+  font-style: italic;
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
+  animation: myAni 3s ease 0s 1 normal both;
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 1.5vw;
+  margin-bottom: 1vw;
+  /* border: solid 1px red; */
+  /* border: solid 1px red; */
+}
+
+@keyframes myAni {
+	0% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+.container-task h1 {
+  margin-top: 5vw;
+  display: flex;
+  flex-direction: column;
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
+  animation: myAni 3s ease 0s 1 normal both;
+}
+
+.error-text {
+  font-size: 0.8vw;
+  background: linear-gradient(#e8b3a5, #e48970);
+  border-radius: 2vw;
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-top: 3vh;
+}
+
+/* TASK ITEM COMPONENT ----------------------------------------------------------------------------------*/
+
+.done {
+  /* color: green; */
+  text-decoration: line-through;
+}
+.pending {
+  /* color: red; */
+  text-decoration: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1vw;
   padding-left: 2vw;
   padding-right: 2vw;
-  padding-top: 2vw;
+  padding-bottom: 2vw;
 }
 
-p {
-  text-align: center;
+.buttons img {
+  width: 3vw;
 }
 
-/* SignUp Component */
+.botton1 {
+  border-radius: 50%;
+  border: none;
+  cursor: crosshair;
+}
 
-/* Home view */
+.alerta-borrar {
+  width: 50%;
+  height: 50%;
+  background-color: #ffffff;
+}
 
-/* Account View */
+/* SignUp Component -------------------------------------------------------------------------------------*/
+
+/* Home view --------------------------------------------------------------------------------------------*/
+/* Esta linea es las cajitas de las task */
+.boxflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  height: auto;
+  background-image: url("../../assets/fondotaskitem.png") ;
+  background-size:cover;
+  background-attachment: fixed;
+  padding-top: 85vh;
+  padding-bottom: 15vh;
+}
+
+/* Account View --------------------------------------------------------------------------------------------*/
+img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.fondoperfil {
+  background-color:rgb(0, 0, 0);
+}
+
+/* FOOTER COMPONENT --------------------------------------------------------------------------------------- */
+.footer {
+  width: 100%;
+  height: 15vh;
+  background-image: url("../../assets/AdobeStock_234342732.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:rgb(253, 218, 196);
+  padding-bottom: 5vh;
+  padding-top: 5vh;
+}
+
+.footer img {
+width: 5vw;
+border-radius: 0%;
+margin-bottom: 1vw;
+}

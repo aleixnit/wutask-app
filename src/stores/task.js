@@ -4,9 +4,10 @@ import { supabase } from "../supabase";
 import { useUserStore } from "./user";
 
 export const useTaskStore = defineStore("tasks", () => {
-  // Esta tienda utiliza el Composition API
+  // Esta tienda utiliza el Composition API ----------------------------------------------
   const tasksArr = ref(null);
-  // conesguir tareas de supabase
+
+  // conesguir tareas de supabase -----------------
   const fetchTasks = async () => {
     const { data: tasks } = await supabase
       .from("tasks")
@@ -15,11 +16,8 @@ export const useTaskStore = defineStore("tasks", () => {
     tasksArr.value = tasks;
     return tasksArr.value;
   };
-
-  //completar tareas
-
   
-  // añadir tareas de supabase
+  // añadir tareas de supabase ------------------------------------------------------
   const addTask = async (title, description) => {
     console.log(useUserStore().user.id);
     const { data, error } = await supabase.from("tasks").insert([
@@ -32,7 +30,7 @@ export const useTaskStore = defineStore("tasks", () => {
     ]);
   };
 
-  //completar tareas
+  //completar tareas -------------------------------------------------------------------
   const completeTask = async (valorDeBooleano, id) => {
     let { data: tasks, error } = await supabase
       .from("tasks")
@@ -40,7 +38,7 @@ export const useTaskStore = defineStore("tasks", () => {
       .match({ id: id });
   };
 
-  // modificar tareas
+  // modificar tareas --------------------------------------------------------------------
 const editTask = async (title, description, id) => {
  const {data, error} = await supabase.from("tasks").update
  ({
@@ -49,7 +47,7 @@ const editTask = async (title, description, id) => {
  }).match({id: id});
 };
 
-  // borrar tareas de supabase
+  // borrar tareas de supabase ---------------------------------------------------------------
   const deleteTask = async (id) => {
     const { data, error } = await supabase.from("tasks").delete().match({
       id: id,
@@ -57,5 +55,3 @@ const editTask = async (title, description, id) => {
   };
   return { tasksArr, fetchTasks, addTask, deleteTask, editTask, completeTask };
 });
-
-//completar tareas

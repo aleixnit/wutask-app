@@ -47,9 +47,9 @@ getTasks();
 
 const completeTaskSupabase = async (taskObject) => {
   console.log("click");
-  console.log(taskObject); // esto es un objeto que incluye description, id, inserted_at, is_complete, title, user_id
+  console.log(taskObject); 
   console.log(taskObject.id);
-  console.log(taskObject.is_complete); //false
+  console.log(taskObject.is_complete);
 
   let changeTaskBooleanValue = !taskObject.is_complete;
 
@@ -57,30 +57,10 @@ const completeTaskSupabase = async (taskObject) => {
 
   await taskStore.completeTask(changeTaskBooleanValue, taskId);
   
-}
+};
 </script>
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolore quidem illum. Officia autem ea aperiam, quos rerum esse, quod assumenda corrupti nemo magni aliquam natus deserunt molestiae totam laboriosam.
-
 <style>
-/* Esta linea es las cajitas de las task */
-.boxflex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2vw;
-  height: auto;
-  background-image: url("../../assets/fondotaskitem.png") ;
-  background-size:cover;
-  background-attachment: fixed;
-  padding-top: 85vh;
-  padding-bottom: 15vh;
-  /* background-image: url("../../assets/mar-de-soledad_1920x1080_xtrafondos.com.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  z-index: -2; */
-  /* border: solid 1px red; */
-}
+
 </style>
 
 <!-- 

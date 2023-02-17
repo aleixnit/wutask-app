@@ -3,13 +3,13 @@
 <template>
   <div class="fondo">
     <div class="loginpage">
-      <img src="/assets/Logo1.png" alt="Logo Task App" />
+      <img src="/assets/logowu3.png" alt="Logo Task App" />
       <h3>Bienvenido a la App de tus Tareas</h3>
       <p>Organiza las tareas de tu dia a dia</p>
 
       <!-- FORMULARIO -->
-      <form @submit.prevent="signIn">
-        <div class="form">
+      <!-- <form @submit.prevent="signIn"> -->
+        <!-- <div class="form">
           <div class="form-input">
             <label for="email" class="input-field-label" />
             <input
@@ -31,12 +31,26 @@
               v-model="password"
               required
             />
+          </div> -->
+          <!-- inputs nuevos!!!!!!!!!!! -->
+          <form @submit.prevent="signIn">
+          <div class="group">
+            <input required="" type="email" v-model="email" class="input" />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="email">Email</label>
+          </div>
+
+          <div class="group">
+            <input required="" type="password" v-model="password" class="input" />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="password">Contraseña</label>
           </div>
 
           <!-- REGISTRARSE / SIGN UP -->
           <button type="submit" class="botton1">
             Iniciar sesión
-
             <!-- boton animado -->
           </button>
           <p>
@@ -47,10 +61,13 @@
               class="sign-up-link"
             />
           </p>
+        </form>
         </div>
-      </form>
-    </div>
-  </div>
+      </div>
+    <!-- </div> -->
+    
+    
+  
 </template>
 
 <script setup>
@@ -87,64 +104,6 @@ const signIn = async () => {
     }, 2500);
   }
 };
-
 </script>
 
-<style scoped>
-.fondo {
-  background-image: url("../../assets/fondo-banner-computacion-nube-ciudad-inteligente.jpg");
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loginpage {
-  background: rgba(255, 255, 255, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  width: 60vw;
-}
-
-.loginpage h3 {
-  font-size: 2vw;
-  margin-top: 2.5vw;
-  margin-bottom: 1.5vw;
-}
-
-.loginpage p {
-  padding-left: 20vw;
-  padding-right: 20vw;
-  margin-bottom: 1.5vw;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* animacion inputs */
-.input-field {
-  margin-top: 1.5vw;
-  background-color: white;
-  width: 40vw;
-  height: 2vw;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
-/* .input-field:focus {
-  color:  #4469af;
-  background-color: white;
-  outline-color:  #4469af;
-  box-shadow: -3px -3px 15px #4469af;
-  transition: .1s;
-  transition-property: box-shadow;
-} */
-</style>
+<style scoped></style>

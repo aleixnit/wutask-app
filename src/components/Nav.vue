@@ -3,7 +3,7 @@
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
     <img
       class="navbar-img"
-      src="/assets/logowu.png"
+      src="/assets/logowu3.png"
       alt=""
     />
     <router-link class="links-visitados" to="/"
@@ -20,7 +20,7 @@
       <ul>
         <li>
           <!-- <button class="button-nav"> -->
-          <router-link class="links-visitados" to="/"
+          <router-link class="links-visitados" to="/reloj"
             ><a class="fancy" href="#">
               <span class="top-key"></span>
               <span class="text">Reloj</span>
@@ -99,78 +99,4 @@ const signOut = async () => {
 </script>
 
 <style>
-/* .menu {
-  height: 15vh;
-  color: white;
-  background-color: black;
-}
-.menu-central ul {
-  display: flex;
-  flex-direction: row;
-  gap: 15vw;
-  list-style: none;
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-} */
-
-nav {
-  background-color: transparent;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 5vh;
-  padding-bottom: 15vh;
-  position: relative;
-  z-index: 2;
-  font-size: 1.3vw;
-  font-weight: bold;
-}
-
-nav a {
-  text-decoration: none;
-}
-nav ul {
-  list-style: none;
-  /* padding-inline-start: 0; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
-}
-
-.navbar-img {
-  width: 7vw;
-  border-radius: 0%;
-}
-
-.links-visitados:visited {
-  color: #fff;
-  text-decoration: none;
-}
-
-.gradient-text {
-  background-image: linear-gradient(to left, #efdfdf, #e48970);
-  -webkit-background-clip: text; /* Prefijo necesario para que funcione en Chrome */
-  background-clip: text;
-  color: transparent;
-}
-
-.log-out ul {
-  display: flex;
-  flex-direction: row;
-  gap: 3vw;
-}
-
-.log-out ul li p {
-  font-size: 0.9vw;
-}
-
-.log-out ul li p span{
-  /* color: #e48970; */
-}
 </style>
