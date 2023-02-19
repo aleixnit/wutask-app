@@ -4,12 +4,13 @@
   <div class="fondo">
     <div class="loginpage">
       <img src="/assets/logowu3.png" alt="Logo Task App" />
-      <h3>Bienvenido a la App de tus Tareas</h3>
-      <p>Organiza las tareas de tu dia a dia</p>
+      <h3>¡Bienvenido al WuTask App!</h3>
+      <p class="refactClass">¡Mantén las tareas de tu dia a dia organizadas!</p>
+
 
       <!-- FORMULARIO -->
       <!-- <form @submit.prevent="signIn"> -->
-        <!-- <div class="form">
+      <!-- <div class="form">
           <div class="form-input">
             <label for="email" class="input-field-label" />
             <input
@@ -32,27 +33,31 @@
               required
             />
           </div> -->
-          <!-- inputs nuevos!!!!!!!!!!! -->
-          <form @submit.prevent="signIn">
-          <div class="group">
-            <input required="" type="email" v-model="email" class="input" />
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label for="email">Email</label>
-          </div>
+      <!-- inputs nuevos!!!!!!!!!!! -->
+      <form @submit.prevent="signIn">
+        <div class="inputSignin">
+          <input required="" type="email" v-model="email" class="input" />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="email">Email</label>
+        </div>
 
-          <div class="group">
-            <input required="" type="password" v-model="password" class="input" />
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label for="password">Contraseña</label>
-          </div>
-
+        <div class="inputSignin">
+          <input required="" type="password" v-model="password" class="input" />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="password">Contraseña</label>
+        </div>
+        <div class="iniciarRegistro">
           <!-- REGISTRARSE / SIGN UP -->
-          <button type="submit" class="botton1">
-            Iniciar sesión
+          <button class="fancy" type="submit">
             <!-- boton animado -->
+            <span class="top-key"></span>
+            <span class="text">Iniciar Sesión</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
           </button>
+
           <p>
             No tienes una cuenta?
             <PersonalRouter
@@ -61,13 +66,11 @@
               class="sign-up-link"
             />
           </p>
-        </form>
         </div>
-      </div>
-    <!-- </div> -->
-    
-    
-  
+      </form>
+    </div>
+  </div>
+  <!-- </div> -->
 </template>
 
 <script setup>
@@ -80,7 +83,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/signup";
-const buttonText = "Sign Up";
+const buttonText = "¡Registrate!";
 
 // Input Fields
 const email = ref("");

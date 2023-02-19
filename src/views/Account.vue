@@ -1,8 +1,9 @@
 <template>
   <div class="fondoperfil">
     <Nav />
+    <div class="avatarProfile">
     <h1>Name: {{ username }}</h1>
-    <img
+    <img 
       :src="
         avatar_url
           ? avatar_url
@@ -10,11 +11,15 @@
       "
       alt="Profile picture"
     />
+  </div>
     <div>
-      <h2>Email: {{ username }}</h2>
+      <h2>Username: {{ username }}</h2>
+      <h2>Full name: {{ name }}</h2>
       <h2>Website: {{ website }}</h2>
+      <h2>Email {{ email }}</h2>
+      
     </div>
-    <button @click.prevent="editProfileButton">Edit your profile</button>
+    <button class="avatarProfile" @click.prevent="editProfileButton">Edit your profile</button>
 
     <form class="form-widget" @submit.prevent="updateProfile">
     <!-- Add to body -->
@@ -45,6 +50,7 @@ const username = ref(null);
 const website = ref(null);
 const avatar_url = ref(null);
 const name = ref(null);
+const email = ref(null);
 
 onMounted(() => {
   getProfile();
@@ -55,7 +61,8 @@ async function getProfile() {
   username.value = userStore.profile.username;
   avatar_url.value = userStore.profile.avatar_url;
   website.value = userStore.profile.website;
-  name.value = userStore.profile.name;
+  name.value = userStore.profile.full_name;
+  email.value = userStore.profile.email;
 }
 
 async function signOut() {
@@ -75,4 +82,30 @@ const editProfileButton = () => {
 };
 </script>
 
-<style></style>
+<style>
+
+/* .fondoperfil h1, h2 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top: 20vh;
+} */       
+
+.fondoperfil h2 {
+  right: 50vw;
+  top: 30vh;
+}
+
+.avatarProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 6vh;
+}
+
+
+
+</style>

@@ -9,12 +9,20 @@
 } */
 
 /* GENERAL CLASSES ---------------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,600;1,200&family=Rampart+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,600;1,200&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  font-family: "Quicksand" "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
 
+body {
+  font-family: "Quicksand";
+}
 h1 {
   margin-bottom: 7vh;
   display: flex;
@@ -27,16 +35,33 @@ h3 {
   text-align: center;
   padding-left: 2vw;
   padding-right: 2vw;
-  padding-top: 2vw;
+  margin-top: 2vw;
+  font-family: "Quicksand";
 }
 
 p {
   text-align: center;
 }
 
+/* poner el background autocompletado de los inputs transparente */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+}
+
 /* INPUTS animados ---------------------------------------------------------------------------------------*/
 .group {
   position: relative;
+
+ }
+
+ .inputSignin {
+  position:relative;
+  padding-top: 3vh;
+  padding-bottom: 4vh;
  }
  
  .input {
@@ -50,9 +75,11 @@ p {
   border-bottom: 1px solid  #e48970;
   background: transparent;
  }
- 
+
  .input:focus {
   outline: none;
+  background: transparent;
+  
  }
  
  label {
@@ -121,11 +148,14 @@ p {
  
  @keyframes inputHighlighter {
   from {
+    width: 50vw;
+    height: 3.5vh;
    background: #e48970;
   }
  
   to {
    width: 0;
+   height: 3.5vh;
    background: transparent;
   }
  }
@@ -306,9 +336,13 @@ p {
   /* opacity: 80%; */
 }
 
+.card2 h3 {
+  font-weight: 600;
+}
 .card2 p {
   padding-left: 2vw;
   padding-right: 2vw;
+  font-weight: 300;
 }
 .card2:hover {
   transform: scale(0.98);
@@ -374,12 +408,26 @@ nav ul {
 
 /* SignIn Component -------------------------------------------------------------------------------------- */
 .fondo {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(64, 29, 29, 0.5)), url("../../assets/el-sol-al-amanecer-entre-las-nubes_5120x2880_xtrafondos.com.jpg");
+  background-image: linear-gradient(rgba(58, 24, 3, 0.5), rgba(0, 0, 0, 0.8)), url("../../assets/el-sol-al-amanecer-entre-las-nubes_5120x2880_xtrafondos.com.jpg");
   background-size: cover;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fondoAnimadoNewTask 25s ease 0s infinite alternate forwards;
+}
+
+@keyframes fondoAnimadoNewTask {
+	0% {
+		background-position: left center;
+		background-size: 100%;
+	}
+
+	100% {
+		background-position: left center;
+		background-size: 130%;
+	}
 }
 
 .loginpage {
@@ -394,21 +442,30 @@ nav ul {
 
 .loginpage img {
   border-radius: 0;
-  width: 15vw;
+  width: 10vw;
 }
 
 .loginpage h3 {
   font-size: 3vw;
-  margin-top: 2.5vw;
-  margin-bottom: 1.5vw;
-  color: white;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  color: #e8b3a5;
+  /* background: linear-gradient( #e8b3a5, #e48970); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5vw;
+  /* font-family: "Rampart One"; */
+  /* letter-spacing: 0.5vw; */
 }
 
 .loginpage p {
-  padding-left: 20vw;
-  padding-right: 20vw;
-  margin-bottom: 1.5vw;
   color: white;
+}
+.refactClass {
+  margin-bottom: 3vw;
+  color: white;
+  font-size: 1.5vw;
 }
 
 .form {
@@ -418,7 +475,21 @@ nav ul {
   align-items: center;
 }
 
+.iniciarRegistro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5vh;
+}
 
+.sign-up-link {
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient( #e8b3a5, #e48970);
+  cursor: crosshair;
+  padding: 1vw;
+  margin-left: 2vw;
+}
 
 /* NEW TASK COMPONENT ----------------------------------------------------------------------------------- */
 @keyframes fondoAnimadoNewTask {
@@ -448,7 +519,7 @@ nav ul {
   background-size: cover;
   position: absolute;
   top: 0;
-  animation: fondoAnimadoNewTask 40s ease 0s infinite alternate forwards;
+  animation: fondoAnimadoNewTask 35s ease 0s infinite alternate forwards;
 }
 
 .div1 {
@@ -457,6 +528,7 @@ nav ul {
   color: #ffffff;
   text-align: center;
   padding-top: 3vh;
+  font-family: "Quicksand";
 }
 
 
@@ -475,6 +547,7 @@ nav ul {
   font-style: italic;
   text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
   animation: myAni 3s ease 0s 1 normal both;
+  font-family: "Quicksand";
 }
 
 .div2 {
@@ -554,9 +627,17 @@ nav ul {
   background-color: #ffffff;
 }
 
-/* SignUp Component -------------------------------------------------------------------------------------*/
+@keyframes fondoAnimadoNewTask {
+	0% {
+		background-position: left center;
+		background-size: 100%;
+	}
 
-/* Home view --------------------------------------------------------------------------------------------*/
+	100% {
+		background-position: left center;
+		background-size: 130%;
+	}
+}
 /* Esta linea es las cajitas de las task */
 .boxflex {
   display: flex;
@@ -564,12 +645,17 @@ nav ul {
   justify-content: center;
   gap: 2vw;
   height: auto;
-  background-image: url("../../assets/fondotaskitem.png") ;
+  background-image: url("../../assets/fondotaskitem2.png") ;
   background-size:cover;
   background-attachment: fixed;
   padding-top: 85vh;
   padding-bottom: 15vh;
+  animation: fondoAnimadoNewTask 25s ease 0s infinite alternate forwards;
 }
+/* SignUp Component -------------------------------------------------------------------------------------*/
+
+/* Home view --------------------------------------------------------------------------------------------*/
+
 
 /* Account View --------------------------------------------------------------------------------------------*/
 img {

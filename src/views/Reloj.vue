@@ -9,9 +9,13 @@ import { useRouter } from "vue-router";
 
 <template>
     <Nav />
+    
     <FooterComp />
 </template>
 
 
 <style>
+.bodyclock {
+    background-color: black;
+}
 </style>

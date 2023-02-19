@@ -11,7 +11,7 @@
         </p>
         <!-- <button @click=>Marcar como completada</button> -->
         <div class="buttons">
-          <button @click="completeTask" class="botton1">
+          <button @click="completedTask" class="botton1">
             <img src="../../assets/comprobar.png" alt="V">
             <!-- {{ task.is_complete ? "No completada 😐" : "Completada!" }} -->
           </button>
