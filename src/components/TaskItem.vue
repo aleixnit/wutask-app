@@ -12,13 +12,13 @@
         <!-- <button @click=>Marcar como completada</button> -->
         <div class="buttons">
           <button @click="completedTask" class="botton1">
-            <img src="../../assets/comprobar.png" alt="V">
+            <img src="../../assets/TaskItem_Botons/Complete_Black.png" alt="Completar">
             <!-- {{ task.is_complete ? "No completada 😐" : "Completada!" }} -->
           </button>
           
           <!-- boton para editar tareas -->
-          <button @click="inputToggle" class="botton1">
-            <img src="../../assets/editar.png" alt="Edit">
+          <button @click="inputToggle" class="botton2">
+            <img src="../../assets/TaskItem_Botons/Editar_Black.png" alt="Edit">
           </button>
           <div v-if="showInput">
             <div>
@@ -26,7 +26,7 @@
               <input
                 type="text"
                 v-model="newTitle"
-                placeholder="Insert title..."
+                placeholder="Introduce un nuevo titulo"
               />
             </div>
             <div>
@@ -34,13 +34,13 @@
               <input
                 type="text"
                 v-model="newDescription"
-                placeholder="Insert description..."
+                placeholder="Introduce una nueva descripción"
               />
             </div>
             <button @click="sendData"><p>Enviar datos</p></button>
           </div>
           <!-- boton de borrar tareas -->
-          <button @click="showModalToggle" class="botton1"> <img src="../../assets/papelera_borrar.png" alt="X"></button>
+          <button @click="showModalToggle" class="botton3"> <img src="../../assets/TaskItem_Botons/Borrar_Black.png" alt="Borrar"></button>
 
           <div class="modal" v-if="showModal">
             <h2>Seguro que quieres borrar esta tarea?</h2>

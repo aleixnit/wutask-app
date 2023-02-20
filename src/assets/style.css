@@ -9,8 +9,6 @@
 } */
 
 /* GENERAL CLASSES ---------------------------------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,600;1,200&family=Rampart+One&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,600;1,200&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -316,7 +314,7 @@ input:-webkit-autofill:active {
 
 /* card task----------------------------------------------------------------------------------------------*/
 .card {
-  width: 20vw;
+  width: 25vw;
   height: auto;
   background-image: linear-gradient(163deg, #5c5e5f 0%, #e11818 100%);
   border-radius: 20px;
@@ -324,7 +322,7 @@ input:-webkit-autofill:active {
   /* opacity: 80%; */
 }
 .card2 {
-  width: 20vw;
+  width: 25vw;
   height: auto;
   background: linear-gradient(145deg, #ffffff, #e6b3a5);
   display: flex;
@@ -408,14 +406,14 @@ nav ul {
 
 /* SignIn Component -------------------------------------------------------------------------------------- */
 .fondo {
-  background-image: linear-gradient(rgba(58, 24, 3, 0.5), rgba(0, 0, 0, 0.8)), url("../../assets/el-sol-al-amanecer-entre-las-nubes_5120x2880_xtrafondos.com.jpg");
+  background-image: linear-gradient(rgba(58, 24, 3, 0.5), rgba(0, 0, 0, 0.8)), url("../../assets/fondoIntro.png");
   background-size: cover;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fondoAnimadoNewTask 25s ease 0s infinite alternate forwards;
+  animation: fondoAnimadoNewTask 40s ease 0s infinite alternate forwards;
 }
 
 @keyframes fondoAnimadoNewTask {
@@ -514,7 +512,7 @@ nav ul {
   width: 100%;
   padding-top: 5vh;
   padding-bottom: 5vh;
-  background-image: url("../../assets/el-sol-al-amanecer-entre-las-nubes_5120x2880_xtrafondos.com.jpg");
+  background-image: url("../../assets/fondoIntro.png");
   background-attachment: fixed;
   background-size: cover;
   position: absolute;
@@ -531,6 +529,14 @@ nav ul {
   font-family: "Quicksand";
 }
 
+.error-text {
+  font-size: 0.8vw;
+  background: linear-gradient(#e8b3a5, #e48970);
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-top: 3vh;
+}
 
 .underlined-text {
   background-image: linear-gradient(to left, #ebc3b8, #e48970);
@@ -539,7 +545,6 @@ nav ul {
   background-repeat: no-repeat; /* Evita que se repita el subrayado */
   border-radius: 1vw;
 }
-
 
 .div1 p {
   line-height: 3, 5vh;
@@ -580,16 +585,6 @@ nav ul {
   animation: myAni 3s ease 0s 1 normal both;
 }
 
-.error-text {
-  font-size: 0.8vw;
-  background: linear-gradient(#e8b3a5, #e48970);
-  border-radius: 2vw;
-  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  margin-top: 3vh;
-}
-
 /* TASK ITEM COMPONENT ----------------------------------------------------------------------------------*/
 
 .done {
@@ -612,19 +607,24 @@ nav ul {
 }
 
 .buttons img {
-  width: 3vw;
+  width: 5vw;
 }
 
-.botton1 {
-  border-radius: 50%;
+.botton1,
+.botton2,
+.botton3 {
   border: none;
   cursor: crosshair;
+  background-color: transparent;
+}
+
+.botton1:hover img {
+  content: url("../../assets/TaskItem_Botons/complete_green.png");
 }
 
 .alerta-borrar {
   width: 50%;
   height: 50%;
-  background-color: #ffffff;
 }
 
 @keyframes fondoAnimadoNewTask {
@@ -687,4 +687,176 @@ img {
 width: 5vw;
 border-radius: 0%;
 margin-bottom: 1vw;
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------*/
+/* ------------------------- Smaller than 766px (mobile) ------------------------- */
+@media (max-width: 766px) {
+
+  /* BUTONS MOBILE--------------------------------------------------------------------*/  
+
+  /*INPUTS MOBILE --------------------------------------------------------------------*/  
+
+  /* SIGN IN---------------------------------------------------------------------------------------------------------------*/  
+
+  /* SIGN UP COMPONENT MOBILE --------------------------------------------------------------------*/  
+
+
+  /*NAVBAR COMPONENT MOBILE --------------------------------------------------------------------*/  
+  .navbar-img {
+    width: 15vw;
+    position: absolute;
+    top:4vh;
+    left: 4vh;
+  }
+  
+  .links-visitados,
+  .log-out {
+    display:none;
+  }
+  
+  /*NEW TASK COMPONENT MOBILE --------------------------------------------------------------------*/
+@keyframes fondoAnimadoNewTask {
+	0% {
+		background-size: 160%;
+	}
+
+	100% {
+		background-size: 200%;
+	}
+}
+
+.container-task {
+  background-image: url("../../assets/fondoIntro-mobile.png");
+  animation: fondoAnimadoNewTask 25s ease 0s infinite alternate forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  height: 90vh;
+  width: 100%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+}
+
+.div1 {
+  padding-top: 0vh;
+  width: 60%;
+  /* border: solid 1px red; */
+  color: #ffffff;
+  text-align: center;
+  font-family: "Quicksand";
+}
+
+.div1 h1 {
+  font-size: 7vw;
+  margin-bottom: 2vh;
+}
+
+
+.div1 p {
+  line-height: 3,5vh;
+  font-size: 3.9vw;
+  font-style: italic;
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
+  animation: myAni 3s ease 0s 1 normal both;
+  font-family: "Quicksand";
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 1.5vw;
+  margin-bottom: 1vw;
+  /* border: solid 1px red; */
+  /* border: solid 1px red; */
+}
+
+@keyframes myAni {
+	0% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.error-text {
+  font-size: 0.8vw;
+  background: linear-gradient(#e8b3a5, #e48970);
+  border-radius: 2vw;
+  text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.55);
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-top: 3vh;
+}
+
+ /*TASK ITEM COMPONENT MOBILE --------------------------------------------------------------------*/
+.boxflex {
+  gap: 4vh;
+  padding-bottom: 5vh;
+ 
+}
+
+.card2 h3, p {
+  margin-left:6vw;
+  margin-right: 6vw;
+  margin-top: 3vh;
+}
+
+ .card, .card2 {
+  width: 80vw;
+  height: auto;
+ }
+
+ .buttons {
+  gap: 5vw;
+ }
+
+ .buttons img {
+  width: 14vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+@keyframes fondoAnimadoNewTask {
+	0% {
+		background-position: left center;
+		background-size: 200%;
+	}
+
+	100% {
+		background-position: left center;
+		background-size: 230%;
+	}
+}
+
+/* FOOTER COMPONENT --------------------------------------------------------------------------------------- */
+.footer {
+  font-size: 4vw;
+  padding-bottom: 13vh;
+  padding-top: 10vh;
+  width: 100%;
+  
+}
+
+.footer img {
+width: 20vw;
+}
+
+
+
 }

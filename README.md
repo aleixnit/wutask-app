@@ -82,7 +82,7 @@ Test Push
 - [x] 12.15h / 13.15h: Añadimos el botón de editar Tareas
 - [x] 13.15h / 14:45h: Damos una primera pincelada de CSS al TaskItem component.
 
-#### Day Two
+#### Day Three
 ###### Jueves 8, Enero 2023
 
 - [x] 9.00h AM: Estilo la pagina inicial, el Sign Up
@@ -92,13 +92,23 @@ Test Push
 - [x] 12.15h / 13.15h: Estilo un poco el navbar
 - [x] 13.15h / 14:45h: Añado el botón Marcar como completado.
 
-#### Day Two
+#### Day Four
 ###### Viernes 8, Enero 2023
 
-- [ ] Crear la lógica del botón Mark as complete!
+- [ ] Creada la lógica del botón Mark as complete!
 - [ ] Estilar el New Task,Task item i footer
 - [ ] Empezar con el profile
 - [ ] 
+
+#### Day Five
+###### Lunes 20, Enero 2023
+
+- [ ] Estilar el modal del botón de delete.
+- [ ] Hacer que el perfil pueda guardar las imagenes subidas.
+- [ ] Estilar perfil
+- [ ] 
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
