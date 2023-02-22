@@ -115,7 +115,25 @@ const sendData = async () => {
 };
 </script>
 
-<style></style>
+<style>
+
+/* .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: black;
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  color: white;
+} */
+</style>
 
 <!--
 **Hints**

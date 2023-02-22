@@ -100,14 +100,22 @@ Test Push
 - [ ] Empezar con el profile
 - [ ] 
 
-#### Day Five
-###### Lunes 20, Enero 2023
 
-- [ ] Estilar el modal del botón de delete.
+
+###### Martes 21, Enero 2023
+
+- [ ] Terminar el modal de delete
 - [ ] Hacer que el perfil pueda guardar las imagenes subidas.
-- [ ] Estilar perfil
+- [ ] Acabar el responsive
 - [ ] 
 
+
+###### Miercoles 21, Enero 2023
+
+- [ ] Terminar el modal de delete
+- [ ] Hacer que el perfil pueda guardar las imagenes subidas.
+- [ ] Acabar el responsive
+- [ ] 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
