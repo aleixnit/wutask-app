@@ -701,9 +701,187 @@ margin-bottom: 1vw;
   /* BUTONS MOBILE--------------------------------------------------------------------*/  
 
   /*INPUTS MOBILE --------------------------------------------------------------------*/  
-
+  
+   .inputSignin {
+     padding-bottom: 8vh;
+     padding-top: 0vh;
+    position:relative;
+   }
+   
+   .input {
+    font-size: 16px;
+    padding: 15px 10px 10px 5px;
+    color:#ffbfad;
+    text-shadow: 4px 1px 7px rgb(0, 0, 0);
+    display: block;
+    width: 48vw;
+    border: none;
+    border-bottom: 1px solid  #e48970;
+    background: transparent;
+   }
+  
+   .input:focus {
+    outline: none;
+    color: #e48970;
+    background: transparent;
+    
+   }
+   
+   label {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+   
+   .input:focus ~ label, .input:valid ~ label {
+    top: -10px;
+    font-size: 4vw;
+    color: #ffffff;
+   }
+   
+   .bar {
+    position: relative;
+    display: block;
+    width: 200px;
+   }
+   
+   .bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0%;
+    left: 0vw;
+    bottom: 1px;
+    position: absolute;
+    background: linear-gradient( to left, #e8b3a5, #e48970);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+   
+   .bar:before {
+    left: 50%;
+   }
+   
+   .bar:after {
+    right: 50%;
+   }
+   
+   .input:focus ~ .bar:before, .input:focus ~ .bar:after {
+    width: 42.5vw;
+   }
+   
+   .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+   }
+   
+   .input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+   }
+   
+   @keyframes inputHighlighter {
+    from {
+      width: 50vw;
+      height: 3.5vh;
+     background: #e48970;
+    }
+   
+    to {
+     width: 0;
+     height: 3.5vh;
+     background: transparent;
+    }
+   }
+  
+   
+   .animation1 {
+    animation: TituloTarea 2s ease 2s 1 normal forwards;
+   }
+   @keyframes TituloTarea {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.4);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+   .animation2 {
+    animation: DescripciónTarea 2s ease 3s 1 normal forwards;
+   }
+   @keyframes DescripciónTarea {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.4);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
   /* SIGN IN---------------------------------------------------------------------------------------------------------------*/  
+  .fondo {
+    background-image: linear-gradient(rgba(58, 24, 3, 0.5), rgba(0, 0, 0, 0.8)), url("../../assets/fondoIntro-mobile.png");
+  }
+  
+  @keyframes fondoAnimadoNewTask {
+    0% {
+      background-size: 160%;
+    }
+  
+    100% {
+      background-size: 200%;
+    }
+  }
+  
+  .loginpage {
+    justify-content: space-between;
+    width: 80vw;
+  }
+  
+  .loginpage img {
+    width: 25vw;
+  }
+  
+  .loginpage h3 {
+    font-size: 6vw;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+  }
+  
+  .loginpage p {
+    color: white;
+    font-size: 4vw;
+  }
 
+  .iniciarRegistro {
+    gap: 1vh;
+  }
+  .refactClass {
+    margin: 0px;
+    padding: 0px;
+  }
+  
   /* SIGN UP COMPONENT MOBILE --------------------------------------------------------------------*/  
 
 
