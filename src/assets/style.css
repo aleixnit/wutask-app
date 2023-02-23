@@ -4,8 +4,6 @@
     --colorRed: red;
     --fontSize-sm: 16px;
     --fontFamily: 'Arial, Helvetica, sans-serif';
-    --fontTitle: 'Arial';
-    --fontBody: 'Helvetica';
 } */
 
 /* GENERAL CLASSES ---------------------------------------------------------------------------------------*/
@@ -1036,7 +1034,5 @@ margin-bottom: 1vw;
 .footer img {
 width: 20vw;
 }
-
-
 
 }
