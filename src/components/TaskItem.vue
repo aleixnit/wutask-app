@@ -12,44 +12,90 @@
         <!-- <button @click=>Marcar como completada</button> -->
         <div class="buttons">
           <button @click="completedTask" class="botton1">
-            <img src="../../assets/TaskItem_Botons/comprobar.png" alt="Completar">
+            <img
+              src="../../assets/vecteezy_check-mark-icon-sign-symbol-design_10141449_805.png"
+              alt="Completar"
+            />
             <!-- {{ task.is_complete ? "No completada 😐" : "Completada!" }} -->
           </button>
-          
+
+          <!-- boton de borrar tareas -->
+          <button @click="showModalToggle" class="botton3">
+            <img
+              src="../../assets/TaskItem_Botons/papelera_borrar.png"
+              alt="Borrar"
+            />
+          </button>
+
           <!-- boton para editar tareas -->
           <button @click="inputToggle" class="botton2">
-            <img src="../../assets/TaskItem_Botons/editar.png" alt="Edit">
+            <img src="../../assets/TaskItem_Botons/editar.png" alt="Edit" />
           </button>
           <div v-if="showInput">
-            <div>
-              <p>Escribe un título</p>
-              <input
+            <div class="container-edit">
+              <div class="textInputWrapper">
+                <input
+                  v-model="newTitle"
+                  placeholder="Introduce un nuevo titulo"
+                  type="text"
+                  class="textInput"
+                />
+              </div>
+              <!-- <input
                 type="text"
                 v-model="newTitle"
                 placeholder="Introduce un nuevo titulo"
-              />
-            </div>
-            <div>
+              /> -->
+            <div class="textInputWrapper">
+                <input
+                  v-model="newDescription"
+                  placeholder="Introduce un nuevo descripción"
+                  type="text"
+                  class="textInput"
+                />
+              </div>
+            <!-- <div>
               <p>Escribe una descripción</p>
               <input
                 type="text"
                 v-model="newDescription"
                 placeholder="Introduce una nueva descripción"
               />
-            </div>
-            <button @click="sendData"><p>Enviar datos</p></button>
+            </div> -->
+            <button @click="sendData" class="button8">
+              <span class="button8-content">Actualizar tarea</span>
+            </button>
+            <!-- <button @click="sendData"><p>Enviar datos</p></button> -->
           </div>
-          <!-- boton de borrar tareas -->
-          <button @click="showModalToggle" class="botton3"> <img src="../../assets/TaskItem_Botons/papelera_borrar.png" alt="Borrar"></button>
-
-          <div class="modal" v-if="showModal">
-            <h2>Seguro que quieres borrar esta tarea?</h2>
-            <button @click="deleteTask">Si quiero!</button>
-            <button @click="showModalToggle">No, mejor no!</button>
-          </div>
-
-          
         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="aviso-modal" v-if="showModal">
+    <div class="modal">
+      <img
+        class="warning"
+        src="../../assets/warning-icon-png-2756.png"
+        alt="alert"
+      />
+
+      <div class="columns-modal">
+        <h2>
+          Seguro que quieres <br />
+          borrar esta tarea?
+        </h2>
+        <div class="buttons-modal">
+          <button @click="deleteTask" class="button8">
+            <span class="button8-content">Si, quiero borrar! </span>
+          </button>
+        </div>
+
+        <button @click="showModalToggle" class="button8">
+          <span class="button8-content">No, quiero cancelar </span>
+        </button>
+        <!-- <button @click="deleteTask">Si quiero!</button>
+    <button @click="showModalToggle">No, mejor no!</button> -->
       </div>
     </div>
   </div>
@@ -116,23 +162,209 @@ const sendData = async () => {
 </script>
 
 <style>
-
-/* .modal {
+.modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  background-color: black;
+  background: linear-gradient(145deg, #ffffff, #e6b3a5);
   width: 50vw;
   height: 50vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 5vw;
   color: white;
-} */
+  animation: fade-in 0.5s forwards, modal-grow 0.5s forwards;
+}
+
+@keyframes modal-grow {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.warning {
+  width: 15vw;
+}
+
+.aviso-modal {
+  z-index: 1;
+  background-color: #00000080;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.button8 {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+}
+
+.button8:hover::before {
+  transform: scaleX(1);
+}
+
+.button8-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button8::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(233, 168, 93) 10.8%,
+    rgb(228, 123, 52) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+.buttons-modal {
+  display: flex;
+  gap: 2vw;
+}
+
+.columns-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+}
+
+.columns-modal h2 {
+  color: #3d3a4e;
+}
+
+.textInputWrapper {
+  position: relative;
+  width: 180px;
+  margin: 12px 5px;
+  --accent-color: #fbf8f5;
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(247, 247, 247, 0.42);
+}
+
+.textInputWrapper:before,
+.textInputWrapper:after {
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1px;
+  z-index: 4;
+  width: 100%;
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:focus-within:after {
+  border-bottom: 2px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:after {
+  content: "";
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  will-change: transform;
+  border-bottom: 2px solid var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.textInput::placeholder {
+  transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 1;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.582);
+}
+
+.textInputWrapper .textInput {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+  max-height: 36px;
+  background-color: #252525;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: background-color;
+  color: #e8e8e8;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px;
+  width: 100%;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  outline: none;
+}
+
+.textInputWrapper:focus-within .textInput,
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  background-color: #e48970;
+}
+
+.textInputWrapper:focus-within .textInput::placeholder {
+  opacity: 0;
+}
+
+.container-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.botton1:hover {
+  background-image: url("../../assets/vecteezy_check-mark-icon-sign-symbol-design_10141449_805.png");
+}
 </style>
 
 <!--

@@ -1,51 +1,69 @@
 <template>
   <div class="container">
-
+    <img src="/assets/logowu3.png" alt="Logo Task App" />
     <div class="header">
       <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
-        <p class="header-subtitle">Start organizing your tasks!</p>
+        <h3>¡Registrate a WuTask App!</h3>
+        <p class="header-subtitle">
+          ¡Es muy fácil y solo te llevará un minuto!
+        </p>
       </div>
     </div>
 
-    <form @submit.prevent="signUp" class="form-sign-in">
+    <form @submit.prevent="signUp" class="sign-up">
       <div class="form">
         <div class="form-input">
-          <label class="input-field-label">E-mail</label>
-          <input
-            type="email"
-            class="input-field"
-            placeholder="example@gmail.com"
-            id="email"
-            v-model="email"
-            required
-          />
+          <div class="inputSignin">
+            <input
+              placeholder="example@gmail.com"
+              type="email"
+              id="email"
+              v-model="email"
+              class="input"
+              required
+            />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label for="email">Email</label>
+          </div>
         </div>
-        <div class="form-input">
-          <label class="input-field-label">Password</label>
+
+        <div class="inputSignin">
           <input
+            placeholder="********"
             type="password"
-            class="input-field"
-            placeholder="**********"
             id="password"
             v-model="password"
+            class="input"
             required
           />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="password">Contraseña</label>
         </div>
-        <div class="form-input">
-          <label class="input-field-label">Confirm password</label>
+
+        <div class="inputSignin">
           <input
+            placeholder="********"
             type="password"
-            class="input-field"
-            placeholder="**********"
             id="confirmPassword"
             v-model="confirmPassword"
+            class="input"
             required
           />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="password">Confirma tu contraseña</label>
         </div>
-        <button class="button" type="submit">Sign Up</button>
+
+        <button type="submit" data-text="Awesome" class="button6">
+          <span class="actual-text">&nbsp;Regístrate&nbsp;</span>
+          <span class="hover-text" aria-hidden="true"
+            >&nbsp;Regístrate&nbsp;</span
+          >
+        </button>
         <p>
-          Have an account?
+          Ya tienes una cuenta?
           <PersonalRouter
             :route="route"
             :buttonText="buttonText"
@@ -55,7 +73,7 @@
       </div>
     </form>
 
-    <div v-show="errorMsg">{{errorMsg}}</div>
+    <div v-show="errorMsg">{{ errorMsg }}</div>
   </div>
 </template>
 
@@ -69,7 +87,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/login";
-const buttonText = "Sign In";
+const buttonText = "Inicia sesión";
 
 // Input Fields
 const email = ref("");
@@ -100,8 +118,47 @@ const signUp = async () => {
     }
     return;
   }
-  errorMsg.value = "error";
+  errorMsg.value = "¡Las credenciales són inválidas o ya estás registrado!";
 };
 </script>
 
-<style></style>
+<style>
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(58, 24, 3, 0.7), rgba(0, 0, 0, 0.9)),
+    url("../../assets/fondotaskitem2.png");
+  background-size: cover;
+  color: white;
+  animation: fondoAnimadoNewTask2 40s ease 0s infinite alternate forwards;
+}
+
+.container h3 {
+  font-size: 3vw;
+  margin-bottom: 2vw;
+  color: #e8b3a5;
+}
+
+.button-signup {
+  margin-bottom: 3vw;
+  margin-top: 2vw;
+}
+
+.container img {
+  border-radius: 0px;
+  width: 8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form p {
+  margin-top: 2vw;
+}
+
+
+</style>

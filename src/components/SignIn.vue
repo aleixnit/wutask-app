@@ -7,32 +7,6 @@
       <h3>¡Bienvenido al WuTask App!</h3>
       <p class="refactClass">¡Mantén las tareas de tu dia a dia organizadas!</p>
 
-
-      <!-- FORMULARIO -->
-      <!-- <form @submit.prevent="signIn"> -->
-      <!-- <div class="form">
-          <div class="form-input">
-            <label for="email" class="input-field-label" />
-            <input
-              type="email"
-              class="input-field"
-              id="email"
-              placeholder="Introduce tu correo"
-              required
-              v-model="email"
-            />
-          </div>
-          <div class="form-input">
-            <label for="password" class="input-field-label" />
-            <input
-              type="password"
-              id="password"
-              class="input-field"
-              placeholder="Introduce tu contraseña"
-              v-model="password"
-              required
-            />
-          </div> -->
       <!-- inputs nuevos!!!!!!!!!!! -->
       <form @submit.prevent="signIn">
         <div class="inputSignin">
@@ -50,13 +24,18 @@
         </div>
         <div class="iniciarRegistro">
           <!-- REGISTRARSE / SIGN UP -->
+          
+          <button type="submit" data-text="Awesome" class="button6">
+    <span class="actual-text">&nbsp;Iniciar&nbsp;</span>
+    <span class="hover-text" aria-hidden="true">&nbsp;Iniciar&nbsp;</span>
+</button>
+<!-- 
           <button class="fancy" type="submit">
-            <!-- boton animado -->
             <span class="top-key"></span>
             <span class="text">Iniciar Sesión</span>
             <span class="bottom-key-1"></span>
             <span class="bottom-key-2"></span>
-          </button>
+          </button> -->
 
           <p>
             No tienes una cuenta?
@@ -109,4 +88,5 @@ const signIn = async () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

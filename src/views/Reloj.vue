@@ -9,6 +9,7 @@ import { useRouter } from "vue-router";
 
 <template>
     <Nav />
+    
     <FooterComp />
 </template>
 

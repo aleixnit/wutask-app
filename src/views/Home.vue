@@ -15,8 +15,16 @@
       />
     </div>
 
+    <div class="scroll-to-top" @click="scrollToTop">
+      <button class="button4">
+        <span class="button_lg">
+          <span class="button_sl"></span>
+          <span class="button_text">Volver al Inicio</span>
+        </span>
+      </button>
+    </div>
+
     <FooterComp />
-  
   </div>
 </template>
 
@@ -27,7 +35,7 @@ import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
-import FooterComp from '../components/FooterNew.vue'
+import FooterComp from "../components/FooterNew.vue";
 
 const taskStore = useTaskStore();
 
@@ -42,12 +50,12 @@ const getTasks = async () => {
 getTasks();
 
 onUpdated(() => {
-getTasks();
+  getTasks();
 });
 
 const completeTaskSupabase = async (taskObject) => {
   console.log("click");
-  console.log(taskObject); 
+  console.log(taskObject);
   console.log(taskObject.id);
   console.log(taskObject.is_complete);
 
@@ -56,10 +64,155 @@ const completeTaskSupabase = async (taskObject) => {
   let taskId = taskObject.id;
 
   await taskStore.completeTask(changeTaskBooleanValue, taskId);
-  
+};
+</script>
+
+<script>
+export default {
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 <style>
+.scroll-to-top {
+  height: 7.5vh;
+  background-image: linear-gradient(rgb(232,179,165, 0.7), rgba(242, 71, 24, 0.5)), url("../../assets/fondotaskitem2.png");
+  background-size: cover;
+  background-attachment: fixed;
+  padding-left: 43.5vw;
+  padding-top: 0.3vw;
+  padding-bottom: 0.3vw;
+}
+
+.scroll-to-top h1 {
+  font-size: 1vw;
+  color: rgb(255, 255, 255);
+}
+
+.button4 {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.button4::before,
+.button4::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #ffffff;
+  transition: all .15s ease;
+}
+
+.button4::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button4::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button4:active,
+.button4:focus {
+  outline: none;
+}
+
+.button4:active::before,
+.button4:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button4:active::before {
+  top: 3px;
+}
+
+.button4:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #f07a50 ;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button4:hover {
+  color: #0f1923;
+}
+
+.button4:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button4:hover .button_lg::after {
+  background-color: #fff;
+}
 
 </style>
 

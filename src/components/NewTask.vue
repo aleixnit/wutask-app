@@ -26,7 +26,7 @@
         >
       </p>
       <div v-if="showErrorMessage">
-        <p class="error-text">{{ errorMessage }}</p>
+        <p class="error-text1">{{ errorMessage }}</p>
       </div>
     </div>
 
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="div 3">
+    <div @click="scrollToBottom" class="div 3" >
       <button @click="addTask" class="fancy">
         <span class="top-key"></span>
         <span class="text">Añadir tarea</span>
@@ -99,6 +99,17 @@ const addTask = () => {
   }
 };
 </script>
+<script>
+export default {
+  methods: {
+    scrollToBottom() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+      });
+    }
+  }
+}
+</script>
 
-<style>
-</style>
+<style></style>

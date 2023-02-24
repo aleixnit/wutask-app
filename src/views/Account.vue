@@ -1,6 +1,7 @@
 <template>
-  <div class="fondoperfil">
-    <Nav />
+  <Nav />
+  <div class="container-task1">
+    
     <div class="avatarProfile">
     <h1>Name: {{ username }}</h1>
     <img 
@@ -13,17 +14,15 @@
     />
   </div>
     <div>
-      <h2>Username: {{ username }}</h2>
-      <h2>Full name: {{ name }}</h2>
+      <h2>Nombre de usuario: {{ username }}</h2>
+      <h2>Nombre completo: {{ name }}</h2>
       <h2>Website: {{ website }}</h2>
-      <h2>Email {{ email }}</h2>
-      
     </div>
     <button class="avatarProfile" @click.prevent="editProfileButton">Edit your profile</button>
 
     <form class="form-widget" @submit.prevent="updateProfile">
     <!-- Add to body -->
-    <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" />
+    <!-- <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" /> -->
 
     <!-- Other form elements -->
   </form>
@@ -93,10 +92,7 @@ const editProfileButton = () => {
   top: 20vh;
 } */       
 
-.fondoperfil h2 {
-  right: 50vw;
-  top: 30vh;
-}
+
 
 .avatarProfile {
   display: flex;
@@ -106,6 +102,44 @@ const editProfileButton = () => {
   margin-bottom: 6vh;
 }
 
+@keyframes fondoAnimadoNewTask {
+	0% {
+		background-position: left center;
+		background-size: 100%;
+	}
+
+	100% {
+		background-position: left center;
+		background-size: 120%;
+	}
+}
+
+.container-task1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  height: 45vh;
+  width: 100%;
+  padding-top: 40vh;
+  background-image: linear-gradient(rgba(58, 24, 3, 0.5), rgba(0, 0, 0, 0.8)), url("../../assets/fondoIntro.png");
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  animation: fondoAnimadoNewTask 35s ease 0s infinite alternate forwards;
+  text-align: center;
+  color: white;
+}
+
+.container-task1 h1 {
+  font-size: 2vw;
+}
+
+.container-task1 h2 {
+  font-size: 1vw;
+}
 
 
 </style>

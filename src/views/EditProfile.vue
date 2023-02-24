@@ -1,7 +1,7 @@
 <template>
     <Nav />
     
-    <form>
+    <form class="edit-profile">
       
       <label for="name">Introduce tu nombre</label>
       <input type="text" autocomplete="off" name="name" v-model="name" />
@@ -107,4 +107,11 @@
   };
   </script>
   
-  <style></style>
+  <style>
+  .edit-profile {
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+
+</style>
