@@ -449,7 +449,7 @@ nav ul {
 
 /* SignIn Component -------------------------------------------------------------------------------------- */
 .fondo {
-  background-image: linear-gradient(rgba(58, 24, 3, 0.7), rgba(0, 0, 0, 0.9)),
+  background-image: linear-gradient(rgba(209, 80, 0, 0.7), rgba(0, 0, 0, 0.9)),
     url("../../assets/fondotaskitem2.png");
   background-size: cover;
   width: 100vw;
