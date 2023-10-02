@@ -1,22 +1,425 @@
-/* :root {
-    --colorWhite: #ffffff;
-    --colorBlack: #000000;
-    --colorRed: red;
-    --fontSize-sm: 16px;
-    --fontFamily: 'Arial, Helvetica, sans-serif';
-} */
-
-/* GENERAL CLASSES ---------------------------------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,600;1,200&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-  font-family: "Quicksand" "Trebuchet MS", "Lucida Sans Unicode",
-    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   margin: 0px;
   padding: 0px;
+  /* border: 1px solid red; */
+}
+
+/* poner el background autocompletado de los inputs transparente */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+:root {
+  --colorOne: #ffcd00;
+  --colorTwo: #000000;
+  --colorThree: rgb(255, 255, 255);
+  /* --fontSize-sm: 16px; */
+  /* --fontFamily: "Arial, Helvetica, sans-serif"; */
 }
 
 body {
+  font-family: 'Montserrat';
+  color: white;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+/* -------------------------------- PRELOADER ------------------------------- */
+
+/* ---------------------------- PRELOADER PAGINA ---------------------------- */
+#body {
+  background-color: #000;
+}
+.hiddenloader {
+  /* overflow: hidden; */
+  /* overflow: scroll; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0); /* Fondo semitransparente */
+  z-index: 9999; /* Asegúrate de que el preloader esté en la parte superior */
+}
+
+#onload {
+  /* Otros estilos para el preloader */
+  opacity: 1;
+  transition: opacity 2s ease; /* Duración de la transición y función de temporización */
+}
+
+.centrado {
+height: 100vh;
+background-color: #000;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  border: 4.5px solid #0000;
+  border-radius: 50%;
+  border-color: #dbdcef #0000;
+  animation: spinner-e04l1k 1s infinite linear;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2.2px;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.spinner::before {
+  border-color: var(--colorOne) #0000;
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+
+.spinner::after {
+  margin: 8.9px;
+}
+
+@keyframes spinner-e04l1k {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+/* -------------------------- INICIAR SESIÓN PÁGINA ------------------------- */
+
+
+
+.signin_fondo {
+  background-image: linear-gradient(rgba(57, 56, 53, 0.845), rgba(0, 0, 0, 0.9)),
+    url("../../assets/fondotaskitem2.png");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.signin_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 50%;
+  padding: 3vw 5.5vw;
+}
+
+.signin_content img {
+  width: 5vw;
+  height: 5vw;
+}
+
+.signin_content h3 {
+  font-size: 2.5rem;
+  margin: 1vw 0vw;
+}
+
+.signin_content p {
+  font-size: 0.9rem;
+  line-height: 1.8rem;
+  margin-bottom: 1vw;
+  width: 60%;
+}
+
+.signin_form_box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vw;
+  gap: 3vw;
+}
+
+.signin_form {
+  position: relative;
+  max-height: 200px;
+}
+
+.signin_button_register {
+  text-decoration: none;
+}
+
+.signin_button_register:visited {
+  color: var(--colorOne); /* Establece el color del texto a negro también para los enlaces visitados */
+}
+
+/* ---------------------------- FORMULARIO SIGNIN --------------------------- */
+.signin_input {
+  min-width: 290px;
+  border: none;
+  border-bottom: solid gray 1px;
+  background: transparent;
+  outline: none;
+  padding: 10px;
+  transition: 0.2s;
+  color: #e8e8e8;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.signin_input:focus , .signin_input:valid {
+  border-color: var(--colorOne);
+}
+
+label span {
+  position: absolute;
+  top: 0px;
+  display: block;
+  transition: 0.2s;
+  pointer-events: none;
+  font-size: 17px;
+  color: gray;
+  opacity: 0%;
+}
+
+.signin_input:focus + label span ,.signin_input:valid + label span {
+  color: rgb(255, 238, 127);
+  top: -17px;
+  opacity: 100%;
+}
+
+.signin_input:focus + label p ,.signin_input:valid + label p {
+  opacity: 0;
+}
+
+/* -------------------------- BOTON INICIAR SESIÓN -------------------------- */
+.signin_button {
+  display: flex;
+  padding: 11px 33px;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  background: var(--colorOne);
+  transition: 1s;
+  box-shadow: 6px 6px 0 rgb(0, 0, 0);
+  transform: skewX(-15deg);
+  border: none;
+  margin-bottom: 1.1vw;
+}
+
+.signin_button:focus {
+  outline: none;
+}
+
+.signin_button:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #ffffff;
+}
+
+.signin_button .signin_button_second {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.signin_button:hover  .signin_button_second {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+.signin_button_span {
+  transform: skewX(15deg)
+}
+
+.signin_button_second {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+.signin_button_one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.signin_button_two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.signin_button:hover .signin_button_three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.signin_button:hover .signin_button_one{
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.signin_button:hover .signin_button_two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+    fill: rgb(0, 0, 0);
+  }
+
+  50% {
+    fill: #FBC638;
+  }
+
+  100% {
+    fill: rgb(0, 0, 0);
+  }
+}
+
+/* ------------------------------ BOX 2 SIGN IN ----------------------------- */
+.signin_box2 {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: #FBC638;
+  /* background-color: var(--colorOne); */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 98%;
+  height: 100vh;
+  overflow: hidden;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.video-bg:hover {
+  filter: grayscale(0%);
+}
+
+/* ----------------------- MEDIA QUERYS PAGINA SIGN IN ---------------------- */
+@media only screen and (max-width : 900px) {
+  .signin_box2,
+  .video-background {
+    display: none;
+  }
+
+  .signin_content {
+    align-items: center;
+    width: 80%;
+    padding: 3vw 5.5vw;
+  }
+
+  .signin_content img {
+    width: 18vw;
+    height: 18vw;
+  }
+  
+  .signin_content h3 {
+    font-size: 2.5rem;
+    margin: 1.7vw 0vw;
+    text-align: center;
+  }
+  
+  .signin_content p {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5rem;
+    margin: 4vw 0vw;
+  width: 90%;
+  }
+  
+  .signin_form_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vw;
+    gap: 8vw;
+  }
+
+  }
+
+
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+/* ----------------------------- SIGN UP PAGINA ----------------------------- */
+
+
+
+
+
+/* GENERAL CLASSES ---------------------------------------------------------------------------------------*/
+
+/* body {
   font-family: "Quicksand";
 }
 h1 {
@@ -33,208 +436,12 @@ h3 {
   padding-right: 2vw;
   margin-top: 2vw;
   font-family: "Quicksand";
-}
+} */
 
-p {
+/* p {
   text-align: center;
-}
+} */
 
-/* poner el background autocompletado de los inputs transparente */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #fff !important;
-}
-
-/* INPUTS animados ---------------------------------------------------------------------------------------*/
-.group {
-  position: relative;
-}
-
-.inputSignin {
-  position: relative;
-  padding-top: 3vh;
-  padding-bottom: 4vh;
-}
-
-.input {
-  font-size: 16px;
-  color: #ffbfad;
-  text-shadow: 4px 1px 7px rgb(0, 0, 0);
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 48vw;
-  border: none;
-  border-bottom: 1px solid #e48970;
-  background: transparent;
-}
-
-.input:focus {
-  outline: none;
-  background: transparent;
-}
-
-label {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.input:focus ~ label,
-.input:valid ~ label {
-  top: -20px;
-  font-size: 1.5vw;
-  color: #ffffff;
-}
-
-.bar {
-  position: relative;
-  display: block;
-  width: 200px;
-}
-
-.bar:before,
-.bar:after {
-  content: "";
-  height: 2px;
-  width: 0%;
-  left: 0vw;
-  bottom: 1px;
-  position: absolute;
-  background: linear-gradient(to left, #e8b3a5, #e48970);
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.bar:before {
-  left: 50%;
-}
-
-.bar:after {
-  right: 50%;
-}
-
-.input:focus ~ .bar:before,
-.input:focus ~ .bar:after {
-  width: 42.5vw;
-}
-
-.highlight {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.input:focus ~ .highlight {
-  animation: inputHighlighter 0.3s ease;
-}
-
-@keyframes inputHighlighter {
-  from {
-    width: 50vw;
-    height: 3.5vh;
-    background: #e48970;
-  }
-
-  to {
-    width: 0;
-    height: 3.5vh;
-    background: transparent;
-  }
-}
-
-.animation1 {
-  animation: TituloTarea 2s ease 2s 1 normal forwards;
-}
-@keyframes TituloTarea {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.4);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.animation2 {
-  animation: DescripciónTarea 2s ease 3s 1 normal forwards;
-}
-@keyframes DescripciónTarea {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.4);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* BOTON INICIAR SESIÓN Y REGISTRARSE -------------------------------------------*/
-/* === removing default button style ===*/
-.button6 {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
-  border: none;
-  margin-top: 3vw;
-}
-
-/* button styling */
-.button6 {
-  --border-right: 6px;
-  --text-stroke-color: rgba(255, 248, 248, 0.4);
-  --animation-color: #f29981 ;
-  --fs-size: 2.2em;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: "Arial";
-  position: relative;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
-}
-/* this is the text, when you hover on button */
-.hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
-}
-/* hover */
-.button6:hover .hover-text {
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
-}
 
 /* BOTONES DEL MENUUUU ----------------------------------------------------------------------------------- */
 
@@ -448,8 +655,8 @@ nav ul {
 }
 
 /* SignIn Component -------------------------------------------------------------------------------------- */
-.fondo {
-  background-image: linear-gradient(rgba(209, 80, 0, 0.7), rgba(0, 0, 0, 0.9)),
+/* .fondo {
+  background-image: linear-gradient(rgba(23, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
     url("../../assets/fondotaskitem2.png");
   background-size: cover;
   width: 100vw;
@@ -471,9 +678,9 @@ nav ul {
     background-position: left center;
     background-size: 130%;
   }
-}
+} */
 
-.loginpage {
+/* .loginpage {
   background: rgba(250, 189, 115, 0);
   display: flex;
   flex-direction: column;
@@ -481,28 +688,28 @@ nav ul {
   align-items: center;
   height: 65vh;
   width: 60vw;
-}
+} */
 
-.loginpage img {
+/* .loginpage img {
   border-radius: 0;
   width: 10vw;
-}
+} */
 
 .loginpage h3 {
-  font-size: 3vw;
+  /* font-size: 3vw;
   margin-top: 2vw;
   margin-bottom: 1vw;
-  color: #e8b3a5;
+  color: #e8b3a5; */
   /* background: linear-gradient( #e8b3a5, #e48970); */
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5vw;
+  padding: 0.5vw; */
   /* font-family: "Rampart One"; */
   /* letter-spacing: 0.5vw; */
 }
 
-.loginpage p {
+/* .loginpage p {
   color: white;
 }
 .refactClass {
@@ -532,7 +739,7 @@ nav ul {
   cursor: crosshair;
   padding: 1vw;
   margin-left: 2vw;
-}
+} */
 
 /* SignUp Component -------------------------------------------------------------------------------------*/
 
@@ -710,7 +917,7 @@ nav ul {
 
 /* Account View --------------------------------------------------------------------------------------------*/
 img {
-  width:200px;
+  width: 200px;
 }
 
 .fondoperfil {
@@ -944,18 +1151,18 @@ img {
     color: white;
     animation: fondoAnimadoNewTask2 40s ease 0s infinite alternate forwards;
   }
-  
+
   .container h3 {
     font-size: 6vw;
     margin-bottom: 2vw;
     color: #e8b3a5;
   }
-  
+
   .button-signup {
     margin-bottom: 6vw;
     margin-top: 2vw;
   }
-  
+
   .container img {
     width: 25vw;
     border-radius: 0px;
@@ -963,11 +1170,11 @@ img {
     justify-content: center;
     align-items: center;
   }
-  
+
   .form p {
     margin-top: 2vw;
   }
-  
+
   /*NAVBAR COMPONENT MOBILE --------------------------------------------------------------------*/
   .navbar-img {
     width: 20vw;
@@ -976,7 +1183,7 @@ img {
     left: 4vh;
   }
 
-  .links-visitados{
+  .links-visitados {
     display: none;
   }
 
@@ -1134,7 +1341,7 @@ img {
     color: white;
     animation: fade-in 0.5s forwards, modal-grow 0.5s forwards;
   }
-  
+
   @keyframes modal-grow {
     from {
       transform: translate(-50%, -50%) scale(0.8);
@@ -1143,7 +1350,7 @@ img {
       transform: translate(-50%, -50%) scale(1);
     }
   }
-  
+
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -1152,11 +1359,11 @@ img {
       opacity: 1;
     }
   }
-  
+
   .warning {
     width: 25vw;
   }
-  
+
   .aviso-modal {
     z-index: 1;
     background-color: #00000080;
@@ -1176,16 +1383,16 @@ img {
     background-size: 400%;
     color: #fff;
   }
-  
+
   .button8:hover::before {
     transform: scaleX(1);
   }
-  
+
   .button8-content {
     position: relative;
     z-index: 1;
   }
-  
+
   .button8::before {
     content: "";
     position: absolute;
@@ -1203,28 +1410,28 @@ img {
     );
     transition: all 0.475s;
   }
-  
+
   .buttons-modal {
     display: flex;
     gap: 2vw;
   }
-  
+
   .columns-modal {
     display: flex;
     flex-direction: column;
     gap: 3vw;
   }
-  
+
   .columns-modal h2 {
     color: #3d3a4e;
   }
-  
+
   .container-edit {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .botton1:hover {
     background-image: url("../../assets/vecteezy_check-mark-icon-sign-symbol-design_10141449_805.png");
   }
@@ -1233,7 +1440,11 @@ img {
 
   .scroll-to-top {
     height: 9.5vh;
-    background-image: linear-gradient(rgb(232,179,165, 0.7), rgba(242, 71, 24, 0.5)), url("../../assets/fondotaskitem2.png");
+    background-image: linear-gradient(
+        rgb(232, 179, 165, 0.7),
+        rgba(242, 71, 24, 0.5)
+      ),
+      url("../../assets/fondotaskitem2.png");
     background-size: cover;
     background-attachment: fixed;
     padding-left: 24.5vw;
