@@ -2,105 +2,9 @@
 
 <template>
   <div id="body" class="hiddenloader">
-
     <div class="centrado" id="onload">
-    <div class="master-container">
-      <div class="container">
-        <div class="crescent">
-          <span></span><span></span>
-        </div>
-        <div class="star s1">
-          <span></span><span></span>
-        </div>
-        <div class="star s2">
-          <span></span><span></span>
-        </div>
-        <div class="star s3">
-          <span></span><span></span>
-        </div>
-        <div class="star s4">
-          <span></span><span></span>
-        </div>
-        <div class="star s5">
-          <span></span><span></span>
-        </div>
-        <div class="small-star ss1">
-          <span></span><span></span>
-        </div>
-        <div class="small-star ss2">
-          <span></span><span></span>
-        </div>
-        <div class="small-star ss3">
-          <span></span><span></span>
-        </div>
-        <div class="small-star ss4">
-          <span></span><span></span>
-        </div>
-        <div class="small-star ss5">
-          <span></span><span></span>
-        </div>
-        <div class="small-star ss6">
-          <span></span><span></span>
-        </div>
-        <div class="small-star ss7">
-          <span></span><span></span>
-        </div>
-        <div class="small-star ss8">
-          <span></span><span></span>
-        </div>
-        <div class="hut">
-          <hr>
-          <hr>
-          <hr>
-          <hr>
-          <hr>
-          <hr>
-          <div class="doorway">
-            <hr class="split">
-          </div>
-        </div>
-        <div class="fire-pit">
-          <div class="fire">
-            <div class="inner-fire">
-            </div>
-          </div>
-          <hr class="log1">
-          <hr class="log2">
-        </div>
-        <div class="tree one">
-          <hr class="trunc">
-          <hr class="leaves">
-          <hr class="leaves">
-          <hr class="leaves">
-          <hr class="leaves">
-        </div>
-        <div class="tree two">
-          <hr class="trunc">
-          <hr class="leaves">
-          <hr class="leaves">
-          <hr class="leaves">
-          <hr class="leaves">
-        </div>
-        <div class="tree three">
-          <hr class="trunc">
-          <hr class="leaves">
-          <hr class="leaves">
-          <hr class="leaves">
-          <hr class="leaves">
-        </div>
-        <div class="tree four">
-          <hr class="trunc">
-          <hr class="leaves">
-          <hr class="leaves">
-          <hr class="leaves">
-          <hr class="leaves">
-        </div>
-        <div class="hill"></div>
-      </div>
-      <span style='font-family: "Montserrat"; font-size:1.3rem' class='loading-text'>Cargando...</span>
-    </div>
-  </div>
-  
+      <div class="spinner"></div></div>
+
     <div class="signin_fondo">
       <div class="signin_content">
         <img src="/assets/wulogo.png" alt="Logo Task App" />
@@ -109,14 +13,12 @@
           <span style="color: rgb(255, 230, 0)">WuTask</span> App!
         </h3>
         <p>
-          Imagina una <span class="bold">aplicación de tareas</span> con un toque
-          épico inspirado en el legendario <span class="bold">clan Wu-Tang</span>.
-          Presentamos "TaskWu", una aplicación diseñada para que manejes tus
-          tareas diarias
-          <span class="bold">
-            con la misma pasión y determinación que los miembros del Wu-Tang Clan
-          </span>
-          ponen en su música.
+          With the ability to<span class="bold">
+            register, create, edit, complete, and delete tasks,</span
+          >
+          this app helps you stay<span class="bold">on top</span>
+          of your to-do list with a touch of
+          <span class="bold"> Wu-Tang flair. </span>
         </p>
         <!-- inputs nuevos!!!!!!!!!!! -->
         <form class="signin_form_box" @submit.prevent="signIn">
@@ -129,11 +31,21 @@
               class="signin_input"
             />
             <label for="email">
-              <span style="transition-delay: 0ms; left: 0px; top: -25px;">E</span>
-              <span style="transition-delay: 75ms; left: 20px; top: -25px;">m</span>
-              <span style="transition-delay: 150ms; left: 47px; top: -25px;">a</span>
-              <span style="transition-delay: 225ms; left: 64px; top: -25px;">i</span>
-              <span style="transition-delay: 300ms; left: 75px; top: -25px;">l</span>
+              <span style="transition-delay: 0ms; left: 0px; top: -25px"
+                >E</span
+              >
+              <span style="transition-delay: 75ms; left: 20px; top: -25px"
+                >m</span
+              >
+              <span style="transition-delay: 150ms; left: 47px; top: -25px"
+                >a</span
+              >
+              <span style="transition-delay: 225ms; left: 64px; top: -25px"
+                >i</span
+              >
+              <span style="transition-delay: 300ms; left: 75px; top: -25px"
+                >l</span
+              >
               <p
                 style="
                   position: absolute;
@@ -159,14 +71,30 @@
               class="signin_input"
             />
             <label for="password">
-              <span style="transition-delay: 0ms; left: 0px; top: -25px;">P</span>
-              <span style="transition-delay: 75ms; left: 20px; top: -25px;">a</span>
-              <span style="transition-delay: 150ms; left: 33px; top: -25px;">s</span>
-              <span style="transition-delay: 225ms; left: 47px; top: -25px;">s</span>
-              <span style="transition-delay: 300ms; left: 56px; top: -25px;">w</span>
-              <span style="transition-delay: 375ms; left: 72px; top: -25px;">o</span>
-              <span style="transition-delay: 450ms; left: 85px; top: -25px;">r</span>
-              <span style="transition-delay: 525ms; left: 95px; top: -25px;">d</span>
+              <span style="transition-delay: 0ms; left: 0px; top: -25px"
+                >P</span
+              >
+              <span style="transition-delay: 75ms; left: 20px; top: -25px"
+                >a</span
+              >
+              <span style="transition-delay: 150ms; left: 33px; top: -25px"
+                >s</span
+              >
+              <span style="transition-delay: 225ms; left: 47px; top: -25px"
+                >s</span
+              >
+              <span style="transition-delay: 300ms; left: 56px; top: -25px"
+                >w</span
+              >
+              <span style="transition-delay: 375ms; left: 72px; top: -25px"
+                >o</span
+              >
+              <span style="transition-delay: 450ms; left: 85px; top: -25px"
+                >r</span
+              >
+              <span style="transition-delay: 525ms; left: 95px; top: -25px"
+                >d</span
+              >
               <p
                 style="
                   position: absolute;
@@ -233,15 +161,15 @@
           </div>
         </form>
       </div>
-        <div class="signin_box2">
-          <div class="video-background">
-            <video autoplay muted loop class="video-bg">
-              <source src="../../assets/wutaskvideo2.mp4" type="video/mp4" />
-              Tu navegador no soporta el elemento de video.
-            </video>
-            <!-- Contenido de tu componente aquí -->
-              </div>
+      <div class="signin_box2">
+        <div class="video-background">
+          <video autoplay muted loop class="video-bg">
+            <source src="../../assets/wutaskvideo2.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+          <!-- Contenido de tu componente aquí -->
         </div>
+      </div>
     </div>
   </div>
   <!-- </div> -->
@@ -255,13 +183,16 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
 
- //PRELOADER PAGINA WEB
- window.onload = function () {
-      setTimeout(function () {
-        $('#onload').fadeOut();
-        $('#body').removeClass('hiddenloader');
-      }, 1000); // 1500 milisegundos = 1.5 segundos
-    }
+//PRELOADER PAGINA WEB
+window.onload = function () {
+  setTimeout(function () {
+    $("#onload").css("opacity", "0"); // Cambia la opacidad a 0 para que se desvanezca
+    setTimeout(function () {
+      $("#onload").hide(); // Oculta el elemento después de la transición
+    }, 500); // Espera 0.5 segundos antes de ocultar el elemento
+    $("#body").removeClass("hiddenloader");
+  }, 1000); // 1500 milisegundos = 1.5 segundos
+};
 // Route Variables
 const route = "/auth/signup";
 const buttonText = "¡Registrate!";
