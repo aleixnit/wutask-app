@@ -402,6 +402,15 @@ label span {
 
   }
 
+  @media (max-width: 766px) {
+    .iniciarRegistro {
+      gap: 1vh;
+      display: flex;
+      flex-direction: column!important;
+  }
+  
+  }
+
 
 /* ----------------------------- SIGN UP PAGINA ----------------------------- */
 /* ----------------------------- SIGN UP PAGINA ----------------------------- */
