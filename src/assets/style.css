@@ -395,7 +395,7 @@ label span {
   }
 
   .iniciarRegistro {
-    gap: 1vh;
+    gap: 1.1vh;
     display: flex;
     flex-direction: column;
 }
