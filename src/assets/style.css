@@ -322,7 +322,7 @@ label span {
   height: 100vh;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
-  background-color: #FBC638;
+  background-color: #5cfb38;
   /* background-color: var(--colorOne); */
 }
 
@@ -394,6 +394,21 @@ label span {
     gap: 8vw;
   }
 
+  .iniciarRegistro {
+    gap: 1.1vh;
+    display: flex;
+    flex-direction: column;
+}
+
+  }
+
+  @media (max-width: 766px) {
+    .iniciarRegistro {
+      gap: 1vh;
+      display: flex;
+      flex-direction: column!important;
+  }
+  
   }
 
 
